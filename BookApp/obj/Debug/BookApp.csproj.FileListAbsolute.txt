@@ -1,1 +1,10 @@
 D:\CourseWare\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.exe.config
+D:\CourseWare\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.exe
+D:\CourseWare\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.pdb
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csprojResolveAssemblyReference.cache
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Main.resources
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Welcome.resources
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Properties.Resources.resources
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csproj.GenerateResource.Cache
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.exe
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.pdb

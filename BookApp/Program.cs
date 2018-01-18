@@ -14,8 +14,8 @@ namespace BookApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Welcome());
-            //Application.Run(new Main());
+            //Application.Run(new Welcome());
+            Application.Run(new Main());
         }
     }
 }

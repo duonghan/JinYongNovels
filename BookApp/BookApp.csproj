@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +115,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\welcome-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Account_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Compress_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\GitHub_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Literature_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Settings_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Shutdown_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Facebook_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Notification_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Twitter_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Slack_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Help_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

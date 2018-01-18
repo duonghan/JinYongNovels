@@ -16,5 +16,31 @@ namespace BookApp
         {
             InitializeComponent();
         }
+
+        private void btnSideHome_Click(object sender, EventArgs e)
+        {
+            viewSideBar(btnSideHome);
+        }
+
+        private void viewSideBar(Button btn)
+        {
+            //pnlSide.Height = btn.Height;
+            pnlSide.Top = btn.Top;
+        }
+
+        private void btnSideList_Click(object sender, EventArgs e)
+        {
+            viewSideBar(btnSideList);
+        }
+
+        private void btnSideSearch_Click(object sender, EventArgs e)
+        {
+            viewSideBar(btnSideSearch);
+        }
+
+        private void btnAuthor_Click(object sender, EventArgs e)
+        {
+            viewSideBar(btnAuthor);
+        }
     }
 }

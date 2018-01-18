@@ -8,3 +8,4 @@ D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Properties.Resources
 D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csproj.GenerateResource.Cache
 D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.exe
 D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.pdb
+D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.HomePage.resources

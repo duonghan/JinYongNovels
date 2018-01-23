@@ -15,6 +15,7 @@ namespace BookApp
         public Main()
         {
             InitializeComponent();
+            viewSideBar(btnSideHome);
         }
 
         private void btnSideHome_Click(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace BookApp
 
         private void viewSideBar(Button btn)
         {
-            //pnlSide.Height = btn.Height;
+            pnlSide.Height = btn.Height;
             pnlSide.Top = btn.Top;
         }
 

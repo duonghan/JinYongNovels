@@ -9,3 +9,14 @@ D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csproj.GenerateResou
 D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.exe
 D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.pdb
 D:\CourseWare\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.HomePage.resources
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.exe.config
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.exe
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.pdb
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.exe
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.pdb
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csprojResolveAssemblyReference.cache
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.HomePage.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Main.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Welcome.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Properties.Resources.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csproj.GenerateResource.Cache

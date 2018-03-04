@@ -68,9 +68,11 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(211, 515);
             this.pnlSidebar.TabIndex = 0;
+            this.pnlSidebar.UseWaitCursor = true;
             // 
             // lblHomeHelp
             // 
+            this.lblHomeHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblHomeHelp.AutoSize = true;
             this.lblHomeHelp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeHelp.ForeColor = System.Drawing.Color.White;
@@ -79,6 +81,7 @@
             this.lblHomeHelp.Size = new System.Drawing.Size(81, 17);
             this.lblHomeHelp.TabIndex = 3;
             this.lblHomeHelp.Text = "version 1.0.0";
+            this.lblHomeHelp.UseWaitCursor = true;
             // 
             // btnAuthor
             // 
@@ -95,6 +98,7 @@
             this.btnAuthor.Text = "           Thông tin tác giả";
             this.btnAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAuthor.UseVisualStyleBackColor = true;
+            this.btnAuthor.UseWaitCursor = true;
             this.btnAuthor.Click += new System.EventHandler(this.btnAuthor_Click);
             // 
             // btnSideSearch
@@ -112,6 +116,7 @@
             this.btnSideSearch.Text = "           Tìm kiếm";
             this.btnSideSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSideSearch.UseVisualStyleBackColor = true;
+            this.btnSideSearch.UseWaitCursor = true;
             this.btnSideSearch.Click += new System.EventHandler(this.btnSideSearch_Click);
             // 
             // btnSideList
@@ -129,6 +134,7 @@
             this.btnSideList.Text = "           Danh sách truyện";
             this.btnSideList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSideList.UseVisualStyleBackColor = true;
+            this.btnSideList.UseWaitCursor = true;
             this.btnSideList.Click += new System.EventHandler(this.btnSideList_Click);
             // 
             // btnSideHome
@@ -146,10 +152,12 @@
             this.btnSideHome.Text = "           Trang chủ";
             this.btnSideHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSideHome.UseVisualStyleBackColor = true;
+            this.btnSideHome.UseWaitCursor = true;
             this.btnSideHome.Click += new System.EventHandler(this.btnSideHome_Click);
             // 
             // btnHomeHelp
             // 
+            this.btnHomeHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHomeHelp.FlatAppearance.BorderSize = 0;
             this.btnHomeHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeHelp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,6 +169,7 @@
             this.btnHomeHelp.TabIndex = 4;
             this.btnHomeHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeHelp.UseVisualStyleBackColor = true;
+            this.btnHomeHelp.UseWaitCursor = true;
             // 
             // pnlHomeTop
             // 
@@ -170,6 +179,7 @@
             this.pnlHomeTop.Name = "pnlHomeTop";
             this.pnlHomeTop.Size = new System.Drawing.Size(813, 10);
             this.pnlHomeTop.TabIndex = 1;
+            this.pnlHomeTop.UseWaitCursor = true;
             // 
             // pnlHomeLogo
             // 
@@ -180,6 +190,7 @@
             this.pnlHomeLogo.Name = "pnlHomeLogo";
             this.pnlHomeLogo.Size = new System.Drawing.Size(111, 124);
             this.pnlHomeLogo.TabIndex = 2;
+            this.pnlHomeLogo.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -191,6 +202,7 @@
             this.label1.Size = new System.Drawing.Size(72, 30);
             this.label1.TabIndex = 6;
             this.label1.Text = "Home";
+            this.label1.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
@@ -200,6 +212,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(66, 65);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
             // 
             // pnlSide
             // 
@@ -208,9 +221,12 @@
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(8, 51);
             this.pnlSide.TabIndex = 4;
+            this.pnlSide.UseWaitCursor = true;
             // 
             // lblHomeTitle
             // 
+            this.lblHomeTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHomeTitle.AutoSize = true;
             this.lblHomeTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeTitle.Location = new System.Drawing.Point(372, 13);
@@ -218,6 +234,7 @@
             this.lblHomeTitle.Size = new System.Drawing.Size(412, 30);
             this.lblHomeTitle.TabIndex = 6;
             this.lblHomeTitle.Text = "Phần mềm đọc truyện kiếm hiệp Kim Dung";
+            this.lblHomeTitle.UseWaitCursor = true;
             // 
             // btnHomeFB
             // 
@@ -232,6 +249,7 @@
             this.btnHomeFB.TabIndex = 4;
             this.btnHomeFB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeFB.UseVisualStyleBackColor = true;
+            this.btnHomeFB.UseWaitCursor = true;
             // 
             // btnHomeTwitter
             // 
@@ -246,6 +264,7 @@
             this.btnHomeTwitter.TabIndex = 4;
             this.btnHomeTwitter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeTwitter.UseVisualStyleBackColor = true;
+            this.btnHomeTwitter.UseWaitCursor = true;
             // 
             // btnHomeGithub
             // 
@@ -260,9 +279,11 @@
             this.btnHomeGithub.TabIndex = 4;
             this.btnHomeGithub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeGithub.UseVisualStyleBackColor = true;
+            this.btnHomeGithub.UseWaitCursor = true;
             // 
             // btnHomeNoti
             // 
+            this.btnHomeNoti.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHomeNoti.FlatAppearance.BorderSize = 0;
             this.btnHomeNoti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeNoti.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,9 +295,11 @@
             this.btnHomeNoti.TabIndex = 4;
             this.btnHomeNoti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeNoti.UseVisualStyleBackColor = true;
+            this.btnHomeNoti.UseWaitCursor = true;
             // 
             // btnHomeSetting
             // 
+            this.btnHomeSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHomeSetting.FlatAppearance.BorderSize = 0;
             this.btnHomeSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeSetting.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,9 +311,11 @@
             this.btnHomeSetting.TabIndex = 4;
             this.btnHomeSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeSetting.UseVisualStyleBackColor = true;
+            this.btnHomeSetting.UseWaitCursor = true;
             // 
             // btnHomeExit
             // 
+            this.btnHomeExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHomeExit.FlatAppearance.BorderSize = 0;
             this.btnHomeExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,6 +327,7 @@
             this.btnHomeExit.TabIndex = 4;
             this.btnHomeExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeExit.UseVisualStyleBackColor = true;
+            this.btnHomeExit.UseWaitCursor = true;
             // 
             // btnHomeSlack
             // 
@@ -316,6 +342,7 @@
             this.btnHomeSlack.TabIndex = 4;
             this.btnHomeSlack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeSlack.UseVisualStyleBackColor = true;
+            this.btnHomeSlack.UseWaitCursor = true;
             // 
             // Main
             // 
@@ -338,6 +365,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
+            this.UseWaitCursor = true;
             this.pnlSidebar.ResumeLayout(false);
             this.pnlSidebar.PerformLayout();
             this.pnlHomeLogo.ResumeLayout(false);

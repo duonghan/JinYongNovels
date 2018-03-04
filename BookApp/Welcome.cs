@@ -19,7 +19,9 @@ namespace BookApp
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            
+            Main begin = new Main();
+            begin.Show();
+            this.Hide();
         }
     }
 }

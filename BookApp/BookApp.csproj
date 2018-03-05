@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BookDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Book.cs" />
     <Compile Include="HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +193,51 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cover\15.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

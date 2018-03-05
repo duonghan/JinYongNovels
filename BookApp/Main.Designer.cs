@@ -49,9 +49,11 @@
             this.btnHomeSetting = new System.Windows.Forms.Button();
             this.btnHomeExit = new System.Windows.Forms.Button();
             this.btnHomeSlack = new System.Windows.Forms.Button();
+            this.dgvTest = new System.Windows.Forms.DataGridView();
             this.pnlSidebar.SuspendLayout();
             this.pnlHomeLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -344,11 +346,20 @@
             this.btnHomeSlack.UseVisualStyleBackColor = true;
             this.btnHomeSlack.UseWaitCursor = true;
             // 
+            // dgvTest
+            // 
+            this.dgvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTest.Location = new System.Drawing.Point(260, 176);
+            this.dgvTest.Name = "dgvTest";
+            this.dgvTest.Size = new System.Drawing.Size(711, 310);
+            this.dgvTest.TabIndex = 7;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 515);
+            this.Controls.Add(this.dgvTest);
             this.Controls.Add(this.lblHomeTitle);
             this.Controls.Add(this.pnlSide);
             this.Controls.Add(this.btnHomeExit);
@@ -371,6 +382,7 @@
             this.pnlHomeLogo.ResumeLayout(false);
             this.pnlHomeLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +410,6 @@
         private System.Windows.Forms.Button btnHomeHelp;
         private System.Windows.Forms.Label lblHomeHelp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvTest;
     }
 }

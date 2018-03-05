@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookApp.DAO;
+using BookApp.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +18,25 @@ namespace BookApp
         {
             InitializeComponent();
             viewSideBar(btnSideHome);
+            loadBook();
         }
 
+        #region Method
+        void loadBook()
+        {
+            List<Book> bookList = BookDAO.Instance.loadBookList();
+
+            foreach(Book book in bookList)
+            {
+                Button btn = new Button() { Width = BookDAO.BookWidth, Height = BookDAO.BookHeight };
+                btn.Text = book.Name + Environment.NewLine + book.Status;
+                //btn.Image = " dasdasdas" + book.ID + ".jpg"; 
+                dgvTest.Controls.Add(btn);
+            }
+        }
+        #endregion
+
+        #region Event
         private void btnSideHome_Click(object sender, EventArgs e)
         {
             viewSideBar(btnSideHome);
@@ -42,6 +61,15 @@ namespace BookApp
         private void btnAuthor_Click(object sender, EventArgs e)
         {
             viewSideBar(btnAuthor);
+        }
+
+        #endregion
+
+        void loadList()
+        {
+            string query = "SELECT chapcontent FROM dbo.chapter WHERE id=1";
+
+            dgvTest.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }

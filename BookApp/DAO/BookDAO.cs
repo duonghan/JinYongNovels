@@ -26,8 +26,8 @@ namespace BookApp.DAO
             }
         }
 
-        public static int BookWidth = 100;
-        public static int BookHeight = 100;
+        public static int BookWidth = 200;
+        public static int BookHeight = 300;
 
         private BookDAO() { }
 

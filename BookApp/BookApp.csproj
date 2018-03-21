@@ -79,12 +79,6 @@
     <Compile Include="View\BookList.Designer.cs">
       <DependentUpon>BookList.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Book_List_Control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Book_List_Control.Designer.cs">
-      <DependentUpon>Book_List_Control.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\ChaptersDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -145,9 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Book_List_Control.resx">
-      <DependentUpon>Book_List_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

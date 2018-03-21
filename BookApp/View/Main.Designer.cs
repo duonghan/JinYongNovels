@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblHomeHelp = new System.Windows.Forms.Label();
             this.btnAuthor = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.pnlSidebar.Controls.Add(this.button2);
             this.pnlSidebar.Controls.Add(this.pictureBox1);
             this.pnlSidebar.Controls.Add(this.lblHomeHelp);
             this.pnlSidebar.Controls.Add(this.btnAuthor);
@@ -60,16 +58,6 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(212, 515);
             this.pnlSidebar.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::BookApp.Properties.Resources.Menu_32px;
-            this.button2.Location = new System.Drawing.Point(169, 47);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 30);
-            this.button2.TabIndex = 6;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -186,6 +174,9 @@
             // 
             // panelContent
             // 
+            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContent.AutoSize = true;
             this.panelContent.Location = new System.Drawing.Point(212, 0);
             this.panelContent.Name = "panelContent";
@@ -223,7 +214,6 @@
         private System.Windows.Forms.Panel pnlSide;
         private System.Windows.Forms.Button btnHomeHelp;
         private System.Windows.Forms.Label lblHomeHelp;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelContent;
     }

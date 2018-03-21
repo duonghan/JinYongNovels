@@ -16,7 +16,7 @@ namespace BookApp.DAO
         {
             get
             {
-                if (instance == null) new BookDAO();
+                if (instance == null) instance = new BookDAO();
                 return instance;
             }
 
@@ -26,8 +26,8 @@ namespace BookApp.DAO
             }
         }
 
-        public static int BookWidth = 50;
-        public static int BookHeight = 50;
+        public static int BookWidth = 100;
+        public static int BookHeight = 100;
 
         private BookDAO() { }
 

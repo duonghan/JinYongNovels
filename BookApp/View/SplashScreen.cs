@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace BookApp
 {
-    public partial class Welcome : Form
+    public partial class SplashScreen : Form
     {
-        public Welcome()
+        public SplashScreen()
         {
             InitializeComponent();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            Main begin = new Main();
-            begin.Show();
-            this.Hide();
+            progressBar1.Increment(1);
+            if(progressBar1.Value == 100)
+            {
+                timer1.Stop();
+            }
         }
     }
 }

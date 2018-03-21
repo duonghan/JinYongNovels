@@ -68,7 +68,7 @@
             this.btnWelcomeExit.TabIndex = 0;
             this.btnWelcomeExit.Text = "Thoát";
             this.btnWelcomeExit.UseVisualStyleBackColor = false;
-            this.btnWelcomeExit.Click += new System.EventHandler(this.btnStart_Click);
+            this.btnWelcomeExit.Click += new System.EventHandler(this.btnWelcomeExit_Click);
             // 
             // btnWelcomeCont
             // 

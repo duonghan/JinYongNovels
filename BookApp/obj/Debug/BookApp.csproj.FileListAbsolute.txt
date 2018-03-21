@@ -20,3 +20,10 @@ D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Main.resources
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Welcome.resources
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Properties.Resources.resources
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csproj.GenerateResource.Cache
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.SplashScreen.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Book_List_Control.resources
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\Bunifu_UI_v1.52.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Home.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Author.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.BookList.resources
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Reader.resources

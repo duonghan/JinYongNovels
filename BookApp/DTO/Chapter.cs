@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookApp
+namespace BookApp.DTO
 {
-    class Module_Quang
+    class Chapter
     {
+
     }
 }

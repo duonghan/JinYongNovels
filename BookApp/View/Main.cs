@@ -44,6 +44,13 @@ namespace BookApp
         //    }
         //}
 
+        void loadList()
+        {
+            string query = "SELECT chapcontent FROM dbo.chapter WHERE id=1";
+
+            //dgvTest.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
+
         private void SplashScreen()
         {
             Application.Run(new SplashScreen());
@@ -59,6 +66,8 @@ namespace BookApp
             resetStyle(btnAuthor);
             resetStyle(btnSideList);
             resetStyle(btnSideSearch);
+
+            this.Text = "Trang chủ";
         }
 
         private void changeStyle(Button btn)
@@ -97,6 +106,8 @@ namespace BookApp
             {
                 BookList.Instance.BringToFront();
             }
+
+            this.Text = "Danh sách truyện";
         }
 
         private void btnSideSearch_Click(object sender, EventArgs e)
@@ -107,6 +118,7 @@ namespace BookApp
             resetStyle(btnAuthor);
             resetStyle(btnSideHome);
             resetStyle(btnSideList);
+
         }
 
         private void btnAuthor_Click(object sender, EventArgs e)
@@ -128,15 +140,19 @@ namespace BookApp
             {
                 Author.Instance.BringToFront();
             }
+
+            this.Text = "Thông tin tác giả";
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
         }
 
         #endregion
 
-        void loadList()
-        {
-            string query = "SELECT chapcontent FROM dbo.chapter WHERE id=1";
-
-            //dgvTest.DataSource = DataProvider.Instance.ExecuteQuery(query);
-        }
     }
 }

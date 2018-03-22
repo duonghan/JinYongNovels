@@ -46,15 +46,11 @@ namespace BookApp
 
             foreach (Book book in bookList)
             {
-                //Button btn = new Button() { Width = BookDAO.BookWidth, Height = BookDAO.BookHeight };
 
-                //btn.Text = book.Name;
-                //btn.ForeColor = Color.White;
-                //btn.Click += book_Click;
-                //btn.Tag = book;
                 Panel panel = addPanel(book);
-                //btn.Text = book.Name + Environment.NewLine + book.Status;
-                //btn.Image = " dasdasdas" + book.ID + ".jpg"; 
+                panel.Tag = book;
+                panel.Click += book_Click;
+
                 flpBook.Controls.Add(panel);
             }
         }
@@ -89,15 +85,21 @@ namespace BookApp
         #region Event
         private void book_Click(object sender, EventArgs e)
         {
-            int bookID = (sender as Book).ID;
-            showBook(bookID);
+            int bookID;
+            try
+            {
+                bookID = ((sender as Panel).Tag as Book).ID;
+            }
+            catch(NullReferenceException ex)
+            {
+                bookID = 1;
+            }
+            Reader reader = new Reader(bookID);
+            reader.Show();
+            ((Form)this.TopLevelControl).Hide();
+
         }
         #endregion
 
-
-        private void showBook(int bookID)
-        {
-            
-        }
     }
 }

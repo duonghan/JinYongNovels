@@ -80,7 +80,7 @@
       <DependentUpon>BookList.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\BookDAO.cs" />
-    <Compile Include="DAO\ChaptersDAO.cs" />
+    <Compile Include="DAO\ChapterDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
@@ -323,7 +323,9 @@
   <ItemGroup>
     <None Include="images\author.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="icon\Back_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

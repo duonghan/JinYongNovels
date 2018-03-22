@@ -46,5 +46,13 @@ namespace BookApp.DAO
 
             return bookList;
         }
+
+        public Book getBookInfo(int id)
+        {
+            string sql = "GetBookInfo @bookid";
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] {id});
+
+            return new DTO.Book(data.Rows[0]);
+        }
     }
 }

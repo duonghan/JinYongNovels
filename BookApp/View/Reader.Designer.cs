@@ -33,11 +33,11 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtBoxSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBookName = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnBackParent = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBoxChapter = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -93,48 +93,51 @@
             this.panel2.Size = new System.Drawing.Size(874, 54);
             this.panel2.TabIndex = 1;
             // 
-            // textBox1
+            // txtBoxSearch
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txtBoxSearch.AcceptsReturn = true;
+            this.txtBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtBoxSearch.AutoCompleteCustomSource.AddRange(new string[] {
             "Tiếu ngạo giang hồ",
             "Tiếu",
             "T",
             "Tiếu ngạpo"});
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(229, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(454, 22);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Tìm kiếm...";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBoxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.txtBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxSearch.ForeColor = System.Drawing.Color.White;
+            this.txtBoxSearch.Location = new System.Drawing.Point(229, 32);
+            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(20);
+            this.txtBoxSearch.Name = "txtBoxSearch";
+            this.txtBoxSearch.Size = new System.Drawing.Size(454, 22);
+            this.txtBoxSearch.TabIndex = 7;
+            this.txtBoxSearch.Text = "Tìm kiếm...";
+            this.txtBoxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBoxSearch.Click += new System.EventHandler(this.Search_Reset);
+            this.txtBoxSearch.Enter += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button2.BackgroundImage = global::BookApp.Properties.Resources.Search_32px;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(691, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSearch.BackgroundImage = global::BookApp.Properties.Resources.Search_32px;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(691, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.lblBookName);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.btnBackParent);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtBoxSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -151,18 +154,19 @@
             this.lblBookName.TabIndex = 9;
             this.lblBookName.Text = "demo";
             // 
-            // button3
+            // btnBackParent
             // 
-            this.button3.BackgroundImage = global::BookApp.Properties.Resources.Back_32px;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(12, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBackParent.BackgroundImage = global::BookApp.Properties.Resources.Back_32px;
+            this.btnBackParent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackParent.FlatAppearance.BorderSize = 0;
+            this.btnBackParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackParent.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBackParent.Location = new System.Drawing.Point(12, 27);
+            this.btnBackParent.Name = "btnBackParent";
+            this.btnBackParent.Size = new System.Drawing.Size(30, 30);
+            this.btnBackParent.TabIndex = 0;
+            this.btnBackParent.UseVisualStyleBackColor = true;
+            this.btnBackParent.Click += new System.EventHandler(this.btnBackParent_Click);
             // 
             // panel3
             // 
@@ -211,7 +215,7 @@
             this.rtContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtContent.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rtContent.BackColor = System.Drawing.Color.Black;
             this.rtContent.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtContent.ForeColor = System.Drawing.Color.White;
             this.rtContent.Location = new System.Drawing.Point(3, 3);
@@ -249,10 +253,10 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtBoxSearch;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnBackParent;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ListBox listBoxChapter;

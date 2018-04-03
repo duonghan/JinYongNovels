@@ -95,8 +95,11 @@ namespace BookApp
                 bookID = 1;
             }
             Reader reader = new Reader(bookID);
+            Form parent = (Form)this.TopLevelControl;
+            reader.FormClosing += delegate { parent.Show(); };
+            
             reader.Show();
-            ((Form)this.TopLevelControl).Hide();
+            parent.Hide();
 
         }
         #endregion

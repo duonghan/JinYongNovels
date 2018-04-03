@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlHomeTop = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.flpBook = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHomeTop.SuspendLayout();
             this.SuspendLayout();
@@ -38,48 +38,48 @@
             // pnlHomeTop
             // 
             this.pnlHomeTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.pnlHomeTop.Controls.Add(this.button1);
-            this.pnlHomeTop.Controls.Add(this.textBox1);
+            this.pnlHomeTop.Controls.Add(this.btnSearch);
+            this.pnlHomeTop.Controls.Add(this.txtBoxSearch);
             this.pnlHomeTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHomeTop.Location = new System.Drawing.Point(0, 0);
             this.pnlHomeTop.Name = "pnlHomeTop";
-            this.pnlHomeTop.Size = new System.Drawing.Size(785, 77);
+            this.pnlHomeTop.Size = new System.Drawing.Size(905, 77);
             this.pnlHomeTop.TabIndex = 2;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::BookApp.Properties.Resources.Search_32px;
-            this.button1.Location = new System.Drawing.Point(649, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 37);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = global::BookApp.Properties.Resources.Search_32px;
+            this.btnSearch.Location = new System.Drawing.Point(769, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(37, 37);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBoxSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txtBoxSearch.AutoCompleteCustomSource.AddRange(new string[] {
             "Tiếu ngạo giang hồ",
             "Tiếu",
             "T",
             "Tiếu ngạpo"});
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(91, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(535, 22);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Tìm kiếm...";
+            this.txtBoxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.txtBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxSearch.ForeColor = System.Drawing.Color.White;
+            this.txtBoxSearch.Location = new System.Drawing.Point(91, 23);
+            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(20);
+            this.txtBoxSearch.Name = "txtBoxSearch";
+            this.txtBoxSearch.Size = new System.Drawing.Size(655, 22);
+            this.txtBoxSearch.TabIndex = 5;
+            this.txtBoxSearch.Text = "Tìm kiếm...";
             // 
             // flpBook
             // 
@@ -89,7 +89,7 @@
             this.flpBook.AutoScroll = true;
             this.flpBook.Location = new System.Drawing.Point(3, 83);
             this.flpBook.Name = "flpBook";
-            this.flpBook.Size = new System.Drawing.Size(779, 413);
+            this.flpBook.Size = new System.Drawing.Size(899, 413);
             this.flpBook.TabIndex = 3;
             // 
             // BookList
@@ -100,7 +100,7 @@
             this.Controls.Add(this.flpBook);
             this.Controls.Add(this.pnlHomeTop);
             this.Name = "BookList";
-            this.Size = new System.Drawing.Size(785, 499);
+            this.Size = new System.Drawing.Size(905, 499);
             this.pnlHomeTop.ResumeLayout(false);
             this.pnlHomeTop.PerformLayout();
             this.ResumeLayout(false);
@@ -110,8 +110,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlHomeTop;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.FlowLayoutPanel flpBook;
     }
 }

@@ -73,5 +73,44 @@ namespace BookApp
             comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[id].ToString();
         }
         #endregion
+
+        private void btnBackParent_Click(object sender, EventArgs e)
+        {
+            BookList booklist = new BookList();
+            Home home = new Home();
+            home.Show();
+            this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string[] words = txtBoxSearch.Text.Split(' ');
+            foreach(string word in words)
+            {
+                int startIndex = 0;
+                while(startIndex < rtContent.TextLength)
+                {
+                    int wordStartIndex = rtContent.Find(word, startIndex, RichTextBoxFinds.None);
+                    if (wordStartIndex != -1)
+                    {
+                        rtContent.SelectionStart = wordStartIndex;
+                        rtContent.SelectionLength = word.Length;
+                        rtContent.SelectionBackColor = Color.YellowGreen;
+
+                    }
+                    else
+                        break;
+
+                    startIndex += wordStartIndex + word.Length;
+                }
+            }
+        }
+
+        private void Search_Reset(object sender, EventArgs e)
+        {
+            rtContent.SelectionStart = 0;
+            rtContent.SelectAll();
+            rtContent.SelectionBackColor = rtContent.BackColor;
+        }
     }
 }

@@ -17,72 +17,41 @@ Ví dụ câu: "con mèo đi ra ngoài đường" thì người dùng tìm kiế
     |    Control           |    Tiền tố     |
     | -------------------- |:--------------:|
     |    Label             |      lbl       |
-    |                      |                |
     |    TextBox           |      txt       |
-    |                      |                |
     |    DataGrid          |      dtg       |
-    |                      |                |
     |    Button            |      btn       |
-    |                      |                |
     |    ImageButton       |      hlk       |
-    |                      |                |
     |    Hyperlink         |      lbl       |
-    |                      |                |
     |    DropDownList      |      ddl       |
-    |                      |                |
     |    DataList          |      dtl       |
-    |                      |                |
     |    Repeater          |      rep       |
-    |                      |                |
     |    Checkbox          |      chk       |
-    |                      |                |
     |    CheckBoxList      |      cbl       |
-    |                      |                |
     |    RadioButton       |      rdo       |
-    |                      |                |
     |    RadioButtonList   |      rbl       |
-    |                      |                |
     |    Image             |      img       |
-    |                      |                |
     |    Panel             |      pnl       |
-    |                      |                |
     |    PlaceHolder       |      phd       |
-    |                      |                |
     |    Table             |      tbl       |
-    |                      |                |
-    |    Validators        |      val       |
-    |                      |                |  
+    |    Validators        |      val       |  
 
 2. ### *Kiểm tra chính tả*  
 
     |    Mục                                   |       Ví dụ                      |
     | ---------------------------------------- |:--------------------------------:|
     |    Bảng chữ cái tiếng việt               |      Không chứa: z,j,w,f         |
-    |                                          |                                  |
     |    Cặp phụ âm đầu                        |      8:nh,th,ph,tr,ch,gh,kh,ng   |
-    |                                          |                                  |
     |    Phụ âm cuối                           |      5:c,m,n,p,t                 |
-    |                                          |                                  |
     |    Cặp phụ âm cuối                       |      3: nh, ng, ch               |
-    |                                          |                                  |
     |    Tối đa 7 chữ cái                      |      "nghiêng"                   |
-    |                                          |                                  |
     |    Tối đa 5 phụ âm                       |      "ngh + ng"                  |
-    |                                          |                                  |
     |    Tối đa 3 nguyên âm                    |      "uye"                       |
-    |                                          |                                  |
     |    Trùng kí tự                           |      "chuung"                    |
-    |                                          |                                  |
     |    Dấu không đúng chỗ                    |      "qũy" -> "quỹ"              |
-    |                                          |                                  |
     |    Sai dấu                               |      "nien" -> "niên"            |
-    |                                          |                                  |
     |    Kí tự thiếu                           |      "kông" -> "không"           |
-    |                                          |                                  |
     |    Chính tả: ch/tr, s/x, d/gi/r, l/n     |      "chăn chối, xuất xắc..."    |
-    |                                          |                                  |
-    |    Hỏi/ngã                               |      "vui vẽ" -> "vui vẻ"        |
-    |                                          |                                  |  
+    |    Hỏi/ngã                               |      "vui vẽ" -> "vui vẻ"        |  
 3. 
 ---
 #### **Thành viên**  

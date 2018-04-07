@@ -20,6 +20,7 @@ namespace BookApp
         {
             InitializeComponent();
             showChapter(bookid);
+            listBoxChapter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
         }
 
         public Reader(int ID)
@@ -28,6 +29,7 @@ namespace BookApp
             InitializeComponent();
             showChapter(bookid);
             showBookName(bookid);
+            listBoxChapter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
         }
 
         #region Method
@@ -54,15 +56,44 @@ namespace BookApp
             lblBookName.Text = bookName;
         }
 
-        private void showContent(int chapID)
+        private void showContent(int id)
         {
+            int chapID = id + 1;
             Chapter chapInfo = ChapterDAO.Instance.getChapterInfo(chapID);
             lblChapName.Text = "Chương " + (chapID) + ". " + chapInfo.Name;           
             rtContent.Text = chapInfo.ChapContent;
-            comboBoxChapterList.SelectedIndex = chapID-1;
-            comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[chapID].ToString();
+
+            comboBoxChapterList.SelectedIndex = id;
+            comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[id].ToString();
+
+            listBoxChapter.SelectedIndex = id;
         }
 
+        private void showSearchResult()
+        {
+            string[] words = txtBoxSearch.Text.Split(' ');
+            foreach (string word in words)
+            {
+                int startIndex = 0;
+                while (startIndex < rtContent.TextLength)
+                {
+                    int wordStartIndex = rtContent.Find(word, startIndex, RichTextBoxFinds.MatchCase | RichTextBoxFinds.WholeWord);
+                    if (wordStartIndex != -1)
+                    {
+                        //rtContent.SelectionStart = wordStartIndex;
+                        //rtContent.SelectionLength = word.Length;
+                        rtContent.SelectionBackColor = Color.YellowGreen;
+
+                        rtContent.Select(startIndex, word.Length);
+
+                    }
+                    else
+                        break;
+
+                    startIndex += wordStartIndex + word.Length;
+                }
+            }
+        }
 
         #endregion
 
@@ -70,11 +101,10 @@ namespace BookApp
         #region Event
         private void listBoxChapter_Click(object sender, EventArgs e)
         {
-            int id = this.listBoxChapter.SelectedIndex + 1;
+            int id = this.listBoxChapter.SelectedIndex;
             showContent(id);
         }
         
-
         private void btnBackParent_Click(object sender, EventArgs e)
         {
             BookList booklist = new BookList();
@@ -85,26 +115,7 @@ namespace BookApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string[] words = txtBoxSearch.Text.Split(' ');
-            foreach(string word in words)
-            {
-                int startIndex = 0;
-                while(startIndex < rtContent.TextLength)
-                {
-                    int wordStartIndex = rtContent.Find(word, startIndex, RichTextBoxFinds.None);
-                    if (wordStartIndex != -1)
-                    {
-                        rtContent.SelectionStart = wordStartIndex;
-                        rtContent.SelectionLength = word.Length;
-                        rtContent.SelectionBackColor = Color.YellowGreen;
-
-                    }
-                    else
-                        break;
-
-                    startIndex += wordStartIndex + word.Length;
-                }
-            }
+            showSearchResult();
         }
 
         private void Search_Reset(object sender, EventArgs e)
@@ -138,19 +149,51 @@ namespace BookApp
             try
             {
                 //Load first chapter in list
-                showContent(1);
+                showContent(0);
             }
             catch(NullReferenceException ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-        #endregion
 
         private void comboBoxChapterList_SelectionChangeCommitted(object sender, EventArgs e)
         {
             ComboBox senderComboBox = (ComboBox)sender;
-            showContent(senderComboBox.SelectedIndex+1);
+            showContent(senderComboBox.SelectedIndex);
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            showContent(this.listBoxChapter.SelectedIndex + 1);
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            showContent(this.listBoxChapter.SelectedIndex - 1);
+        }
+
+        private void txtBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                showSearchResult();
+            }
+        }
+
+        //Word wrap listbox items if content string width is bigger than listbox width
+        private void lst_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            e.ItemHeight = (int)e.Graphics.MeasureString(listBoxChapter.Items[e.Index].ToString(), listBoxChapter.Font, listBoxChapter.Width).Height;
+        }
+
+        private void lst_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawFocusRectangle();
+            e.Graphics.DrawString(listBoxChapter.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+        }
+
+        #endregion
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reader));
             this.comboBoxChapterList = new System.Windows.Forms.ComboBox();
             this.btnNext = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -70,23 +70,25 @@
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // button1
+            // btnPrev
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(331, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Location = new System.Drawing.Point(331, 23);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(37, 23);
+            this.btnPrev.TabIndex = 1;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnPrev);
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.comboBoxChapterList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -118,6 +120,7 @@
             this.txtBoxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxSearch.Click += new System.EventHandler(this.Search_Reset);
             this.txtBoxSearch.Enter += new System.EventHandler(this.RemoveText);
+            this.txtBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxSearch_KeyDown);
             this.txtBoxSearch.Leave += new System.EventHandler(this.AddText);
             // 
             // btnSearch
@@ -200,6 +203,8 @@
             this.listBoxChapter.Size = new System.Drawing.Size(217, 340);
             this.listBoxChapter.TabIndex = 0;
             this.listBoxChapter.Click += new System.EventHandler(this.listBoxChapter_Click);
+            this.listBoxChapter.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lst_DrawItem);
+            this.listBoxChapter.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lst_MeasureItem);
             // 
             // panel4
             // 
@@ -230,15 +235,13 @@
             // 
             // lblChapName
             // 
-            this.lblChapName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblChapName.AutoSize = true;
             this.lblChapName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChapName.Location = new System.Drawing.Point(428, 64);
+            this.lblChapName.Location = new System.Drawing.Point(57, 63);
             this.lblChapName.Name = "lblChapName";
-            this.lblChapName.Size = new System.Drawing.Size(33, 21);
+            this.lblChapName.Size = new System.Drawing.Size(53, 21);
             this.lblChapName.TabIndex = 10;
-            this.lblChapName.Text = "AD";
-            this.lblChapName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChapName.Text = "label1";
             // 
             // Reader
             // 
@@ -268,7 +271,7 @@
 
         private System.Windows.Forms.ComboBox comboBoxChapterList;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.Button btnSearch;

@@ -42,6 +42,7 @@
             this.listBoxChapter = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rtContent = new System.Windows.Forms.RichTextBox();
+            this.lblChapName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,6 +57,7 @@
             this.comboBoxChapterList.Name = "comboBoxChapterList";
             this.comboBoxChapterList.Size = new System.Drawing.Size(112, 21);
             this.comboBoxChapterList.TabIndex = 0;
+            this.comboBoxChapterList.SelectionChangeCommitted += new System.EventHandler(this.comboBoxChapterList_SelectionChangeCommitted);
             // 
             // btnNext
             // 
@@ -115,7 +117,8 @@
             this.txtBoxSearch.Text = "Tìm kiếm...";
             this.txtBoxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxSearch.Click += new System.EventHandler(this.Search_Reset);
-            this.txtBoxSearch.Enter += new System.EventHandler(this.btnSearch_Click);
+            this.txtBoxSearch.Enter += new System.EventHandler(this.RemoveText);
+            this.txtBoxSearch.Leave += new System.EventHandler(this.AddText);
             // 
             // btnSearch
             // 
@@ -134,6 +137,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.lblChapName);
             this.panel1.Controls.Add(this.lblBookName);
             this.panel1.Controls.Add(this.btnBackParent);
             this.panel1.Controls.Add(this.btnSearch);
@@ -224,6 +228,18 @@
             this.rtContent.TabIndex = 0;
             this.rtContent.Text = "";
             // 
+            // lblChapName
+            // 
+            this.lblChapName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblChapName.AutoSize = true;
+            this.lblChapName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChapName.Location = new System.Drawing.Point(428, 64);
+            this.lblChapName.Name = "lblChapName";
+            this.lblChapName.Size = new System.Drawing.Size(33, 21);
+            this.lblChapName.TabIndex = 10;
+            this.lblChapName.Text = "AD";
+            this.lblChapName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +254,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reader";
             this.Text = "Reader";
+            this.Load += new System.EventHandler(this.showEntryContent);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -262,5 +279,6 @@
         private System.Windows.Forms.ListBox listBoxChapter;
         private System.Windows.Forms.RichTextBox rtContent;
         private System.Windows.Forms.Label lblBookName;
+        private System.Windows.Forms.Label lblChapName;
     }
 }

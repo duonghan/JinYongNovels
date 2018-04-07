@@ -15,7 +15,7 @@ namespace BookApp
     public partial class Reader : Form
     {
         private int bookid;
-        
+
         public Reader()
         {
             InitializeComponent();
@@ -31,6 +31,8 @@ namespace BookApp
         }
 
         #region Method
+
+        //Show chapter list in left hand
         private void showChapter(int bookID)
         {
             listBoxChapter.Items.Clear();
@@ -55,9 +57,10 @@ namespace BookApp
         private void showContent(int chapID)
         {
             Chapter chapInfo = ChapterDAO.Instance.getChapterInfo(chapID);
-            rtContent.Text = "Chương " + (chapID + 1) + ". " + chapInfo.Name;
-
+            lblChapName.Text = "Chương " + (chapID) + ". " + chapInfo.Name;           
             rtContent.Text = chapInfo.ChapContent;
+            comboBoxChapterList.SelectedIndex = chapID-1;
+            comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[chapID].ToString();
         }
 
 
@@ -67,12 +70,10 @@ namespace BookApp
         #region Event
         private void listBoxChapter_Click(object sender, EventArgs e)
         {
-            int id = this.listBoxChapter.SelectedIndex;
-            showContent(id+1);
-
-            comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[id].ToString();
+            int id = this.listBoxChapter.SelectedIndex + 1;
+            showContent(id);
         }
-        #endregion
+        
 
         private void btnBackParent_Click(object sender, EventArgs e)
         {
@@ -111,6 +112,45 @@ namespace BookApp
             rtContent.SelectionStart = 0;
             rtContent.SelectAll();
             rtContent.SelectionBackColor = rtContent.BackColor;
+        }
+
+        /**
+         * Create place holder text in textbox
+         * Remove text in textbox when enter in textbox
+         * Add text when leave textbox
+         * */
+        private void RemoveText(object sender, EventArgs e)
+        {
+            if(txtBoxSearch.Text.Equals("Tìm kiếm..."))
+            {
+                txtBoxSearch.Text = "";
+            }
+        }
+
+        private void AddText(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtBoxSearch.Text))
+                txtBoxSearch.Text = "Tìm kiếm...";
+        }
+
+        private void showEntryContent(object sender, EventArgs e)
+        {
+            try
+            {
+                //Load first chapter in list
+                showContent(1);
+            }
+            catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+
+        private void comboBoxChapterList_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ComboBox senderComboBox = (ComboBox)sender;
+            showContent(senderComboBox.SelectedIndex+1);
         }
     }
 }

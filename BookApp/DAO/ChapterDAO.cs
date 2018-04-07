@@ -37,6 +37,8 @@ namespace BookApp.DAO
         {
             List<Chapter> chapterList = new List<Chapter>();
 
+            //Thay vi viet cau lenh truy van
+            //Su dung stored/proceduce trong SQL Server
             string sql = "EXEC GetChapterList @bookid";
             DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { id });
 

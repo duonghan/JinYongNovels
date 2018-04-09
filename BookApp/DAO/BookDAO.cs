@@ -54,5 +54,21 @@ namespace BookApp.DAO
 
             return new DTO.Book(data.Rows[0]);
         }
+
+        //Save last status of each book
+        public void updateBookStatus(int bookid, int status)
+        {
+            string sql = "UpdateBookStatus @bookid , @status";
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { bookid, status });
+        }
+
+        //get the current chapter that is read by user
+        public int getBookStatus(int bookid)
+        {
+            string sql = "GetBookStatus @bookid";
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { bookid });
+
+            return new DTO.Book(data.Rows[0]).Status;
+        }
     }
 }

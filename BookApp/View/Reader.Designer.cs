@@ -36,13 +36,13 @@
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblChapName = new System.Windows.Forms.Label();
             this.lblBookName = new System.Windows.Forms.Label();
             this.btnBackParent = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBoxChapter = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rtContent = new System.Windows.Forms.RichTextBox();
-            this.lblChapName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -52,6 +52,7 @@
             // comboBoxChapterList
             // 
             this.comboBoxChapterList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.comboBoxChapterList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChapterList.FormattingEnabled = true;
             this.comboBoxChapterList.Location = new System.Drawing.Point(374, 23);
             this.comboBoxChapterList.Name = "comboBoxChapterList";
@@ -151,6 +152,16 @@
             this.panel1.Size = new System.Drawing.Size(874, 96);
             this.panel1.TabIndex = 9;
             // 
+            // lblChapName
+            // 
+            this.lblChapName.AutoSize = true;
+            this.lblChapName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChapName.Location = new System.Drawing.Point(57, 63);
+            this.lblChapName.Name = "lblChapName";
+            this.lblChapName.Size = new System.Drawing.Size(53, 21);
+            this.lblChapName.TabIndex = 10;
+            this.lblChapName.Text = "label1";
+            // 
             // lblBookName
             // 
             this.lblBookName.AutoSize = true;
@@ -229,19 +240,10 @@
             this.rtContent.ForeColor = System.Drawing.Color.White;
             this.rtContent.Location = new System.Drawing.Point(3, 3);
             this.rtContent.Name = "rtContent";
+            this.rtContent.ReadOnly = true;
             this.rtContent.Size = new System.Drawing.Size(639, 341);
-            this.rtContent.TabIndex = 0;
+            this.rtContent.TabIndex = 5;
             this.rtContent.Text = "";
-            // 
-            // lblChapName
-            // 
-            this.lblChapName.AutoSize = true;
-            this.lblChapName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChapName.Location = new System.Drawing.Point(57, 63);
-            this.lblChapName.Name = "lblChapName";
-            this.lblChapName.Size = new System.Drawing.Size(53, 21);
-            this.lblChapName.TabIndex = 10;
-            this.lblChapName.Text = "label1";
             // 
             // Reader
             // 

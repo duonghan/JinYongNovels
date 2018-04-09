@@ -59,7 +59,7 @@ namespace BookApp
         private void showContent(int id)
         {
             int chapID = id + 1;
-            Chapter chapInfo = ChapterDAO.Instance.getChapterInfo(chapID);
+            Chapter chapInfo = ChapterDAO.Instance.getChapterInfo(chapID, bookid);
             lblChapName.Text = "Chương " + (chapID) + ". " + chapInfo.Name;           
             rtContent.Text = chapInfo.ChapContent;
 

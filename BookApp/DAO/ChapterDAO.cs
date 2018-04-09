@@ -33,6 +33,7 @@ namespace BookApp.DAO
 
         private ChapterDAO() { }
 
+        //Get chapter list with book id
         public List<Chapter> loadChapterList(int id)
         {
             List<Chapter> chapterList = new List<Chapter>();
@@ -51,10 +52,11 @@ namespace BookApp.DAO
             return chapterList;
         }
 
-        public Chapter getChapterInfo(int id)
+        //Get chapter content based-on chapter id and book id
+        public Chapter getChapterInfo(int id, int bookid)
         {
-            string sql = "GetChapterInfo @chapid";
-            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { id });
+            string sql = "GetChapterInfo @chapid , @bookid";
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { id , bookid});
 
             return new DTO.Chapter(data.Rows[0]);
         }

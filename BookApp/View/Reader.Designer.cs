@@ -259,6 +259,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reader";
             this.Text = "Reader";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Reader_FormClosed);
             this.Load += new System.EventHandler(this.showEntryContent);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

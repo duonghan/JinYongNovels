@@ -94,8 +94,13 @@ namespace BookApp
             {
                 bookID = 1;
             }
+
+            //navigate from parent form and reader form
+            //when click book and close reader
+
             Reader reader = new Reader(bookID);
             Form parent = (Form)this.TopLevelControl;
+            reader.parentTag = parent;
             reader.FormClosing += delegate { parent.Show(); };
             
             reader.Show();

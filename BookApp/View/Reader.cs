@@ -15,6 +15,7 @@ namespace BookApp
     public partial class Reader : Form
     {
         private int bookid;
+        public Form parentTag;
 
         public Reader()
         {
@@ -107,9 +108,11 @@ namespace BookApp
         
         private void btnBackParent_Click(object sender, EventArgs e)
         {
-            BookList booklist = new BookList();
-            Home home = new Home();
-            home.Show();
+            BookDAO.Instance.updateBookStatus(bookid, this.listBoxChapter.SelectedIndex);
+
+            //BookList booklist = new BookList();
+            //Home home = new Home();
+            parentTag.Show();
             this.Close();
         }
 
@@ -149,7 +152,7 @@ namespace BookApp
             try
             {
                 //Load first chapter in list
-                showContent(0);
+                showContent(BookDAO.Instance.getBookStatus(bookid));
             }
             catch(NullReferenceException ex)
             {
@@ -194,6 +197,13 @@ namespace BookApp
             e.Graphics.DrawString(listBoxChapter.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
         }
 
+        private void Reader_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            BookDAO.Instance.updateBookStatus(bookid, this.listBoxChapter.SelectedIndex);
+        }
+
         #endregion
+
+
     }
 }

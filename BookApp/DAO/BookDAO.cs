@@ -70,5 +70,21 @@ namespace BookApp.DAO
 
             return new DTO.Book(data.Rows[0]).Status;
         }
+
+        public Book getLastBook()
+        {
+            string sql = "GetLastBook";
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql);
+
+            return new DTO.Book(data.Rows[0]);
+        }
+
+        public void setLastBook(int bookid)
+        {
+            string sql = "SetLastBook @bookid";
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { bookid });
+        }
+
+
     }
 }

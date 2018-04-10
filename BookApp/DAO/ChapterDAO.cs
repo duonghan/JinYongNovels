@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BookApp.DAO
 {
@@ -55,10 +56,18 @@ namespace BookApp.DAO
         //Get chapter content based-on chapter id and book id
         public Chapter getChapterInfo(int id, int bookid)
         {
-            string sql = "GetChapterInfo @chapid , @bookid";
-            DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { id , bookid});
+            try
+            {
+                string sql = "GetChapterInfo @chapid , @bookid";
+                DataTable data = DataProvider.Instance.ExecuteQuery(sql, new object[] { id, bookid });
 
-            return new DTO.Chapter(data.Rows[0]);
+                return new DTO.Chapter(data.Rows[0]);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show("Không có chương này!!!");
+                throw;
+            }
         }
         
     }

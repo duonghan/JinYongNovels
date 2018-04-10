@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnReadContinue = new System.Windows.Forms.Button();
+            this.pnlBookImage = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnReadContinue
@@ -45,10 +46,19 @@
             this.btnReadContinue.Text = "Đọc tiếp ...";
             this.btnReadContinue.UseVisualStyleBackColor = false;
             // 
+            // pnlBookImage
+            // 
+            this.pnlBookImage.Location = new System.Drawing.Point(61, 26);
+            this.pnlBookImage.Name = "pnlBookImage";
+            this.pnlBookImage.Size = new System.Drawing.Size(195, 232);
+            this.pnlBookImage.TabIndex = 1;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.pnlBookImage);
             this.Controls.Add(this.btnReadContinue);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(813, 369);
@@ -59,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnReadContinue;
+        private System.Windows.Forms.Panel pnlBookImage;
     }
 }

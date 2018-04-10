@@ -55,20 +55,6 @@ namespace BookApp
         {
             Application.Run(new SplashScreen());
         }
-        #endregion
-
-        #region Event
-        private void btnSideHome_Click(object sender, EventArgs e)
-        {
-            viewSideBar(btnSideHome);
-            changeStyle(btnSideHome);
-
-            resetStyle(btnAuthor);
-            resetStyle(btnSideList);
-            resetStyle(btnSideSearch);
-
-            this.Text = "Trang chủ";
-        }
 
         private void changeStyle(Button btn)
         {
@@ -87,6 +73,31 @@ namespace BookApp
             pnlSide.Height = btn.Height;
             pnlSide.Top = btn.Top;
         }
+        #endregion
+
+        #region Event
+        private void btnSideHome_Click(object sender, EventArgs e)
+        {
+            viewSideBar(btnSideHome);
+            changeStyle(btnSideHome);
+
+            resetStyle(btnAuthor);
+            resetStyle(btnSideList);
+            resetStyle(btnSideSearch);
+
+            if (!panelContent.Controls.Contains(BookList.Instance))
+            {
+                panelContent.Controls.Add(HomePage.Instance);
+                HomePage.Instance.Dock = DockStyle.Fill;
+                HomePage.Instance.BringToFront();
+            }
+            else
+            {
+                HomePage.Instance.BringToFront();
+            }
+
+            this.Text = "Trang chủ";
+        }        
 
         private void btnSideList_Click(object sender, EventArgs e)
         {

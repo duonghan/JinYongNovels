@@ -89,6 +89,7 @@ namespace BookApp
             try
             {
                 bookID = ((sender as Panel).Tag as Book).ID;
+                BookDAO.Instance.setLastBook(bookID);
             }
             catch(NullReferenceException ex)
             {

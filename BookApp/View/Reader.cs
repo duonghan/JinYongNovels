@@ -1,4 +1,5 @@
-﻿using BookApp.DAO;
+﻿using BookApp.BUS;
+using BookApp.DAO;
 using BookApp.DTO;
 using System;
 using System.Collections.Generic;
@@ -72,28 +73,7 @@ namespace BookApp
 
         private void showSearchResult()
         {
-            string[] words = txtBoxSearch.Text.Split(' ');
-            foreach (string word in words)
-            {
-                int startIndex = 0;
-                while (startIndex < rtContent.TextLength)
-                {
-                    int wordStartIndex = rtContent.Find(word, startIndex, RichTextBoxFinds.MatchCase | RichTextBoxFinds.WholeWord);
-                    if (wordStartIndex != -1)
-                    {
-                        //rtContent.SelectionStart = wordStartIndex;
-                        //rtContent.SelectionLength = word.Length;
-                        rtContent.SelectionBackColor = Color.YellowGreen;
-
-                        rtContent.Select(startIndex, word.Length);
-
-                    }
-                    else
-                        break;
-
-                    startIndex += wordStartIndex + word.Length;
-                }
-            }
+            Search.Instance.getResult(txtBoxSearch, rtContent);
         }
 
         #endregion

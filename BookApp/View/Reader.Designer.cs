@@ -43,6 +43,7 @@
             this.listBoxChapter = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rtContent = new System.Windows.Forms.RichTextBox();
+            this.btnSpellCheck = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -141,6 +142,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.btnSpellCheck);
             this.panel1.Controls.Add(this.lblChapName);
             this.panel1.Controls.Add(this.lblBookName);
             this.panel1.Controls.Add(this.btnBackParent);
@@ -245,6 +247,18 @@
             this.rtContent.TabIndex = 5;
             this.rtContent.Text = "";
             // 
+            // btnSpellCheck
+            // 
+            this.btnSpellCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSpellCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpellCheck.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpellCheck.Location = new System.Drawing.Point(772, 29);
+            this.btnSpellCheck.Name = "btnSpellCheck";
+            this.btnSpellCheck.Size = new System.Drawing.Size(75, 27);
+            this.btnSpellCheck.TabIndex = 11;
+            this.btnSpellCheck.Text = "Kiểm tra";
+            this.btnSpellCheck.UseVisualStyleBackColor = true;
+            // 
             // Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +302,6 @@
         private System.Windows.Forms.RichTextBox rtContent;
         private System.Windows.Forms.Label lblBookName;
         private System.Windows.Forms.Label lblChapName;
+        private System.Windows.Forms.Button btnSpellCheck;
     }
 }

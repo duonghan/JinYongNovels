@@ -35,19 +35,25 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnSpellCheck = new System.Windows.Forms.Button();
             this.lblChapName = new System.Windows.Forms.Label();
             this.lblBookName = new System.Windows.Forms.Label();
             this.btnBackParent = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.listBoxChapter = new System.Windows.Forms.ListBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCheckError = new System.Windows.Forms.Button();
+            this.btnSearchResult = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.pnlSlide = new System.Windows.Forms.ListBox();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.rtContent = new System.Windows.Forms.RichTextBox();
-            this.btnSpellCheck = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
+            this.pnlSidebar.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxChapterList
@@ -64,26 +70,28 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnNext.BackgroundImage = global::BookApp.Properties.Resources.Next_Page;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Location = new System.Drawing.Point(492, 21);
+            this.btnNext.Location = new System.Drawing.Point(492, 15);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(37, 23);
+            this.btnNext.Size = new System.Drawing.Size(35, 35);
             this.btnNext.TabIndex = 1;
-            this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrev
             // 
             this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPrev.BackgroundImage = global::BookApp.Properties.Resources.Previous_Page;
             this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrev.Location = new System.Drawing.Point(331, 23);
+            this.btnPrev.Location = new System.Drawing.Point(333, 15);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(37, 23);
+            this.btnPrev.Size = new System.Drawing.Size(35, 35);
             this.btnPrev.TabIndex = 1;
-            this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -139,20 +147,32 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // panel1
+            // pnlHeader
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.btnSpellCheck);
-            this.panel1.Controls.Add(this.lblChapName);
-            this.panel1.Controls.Add(this.lblBookName);
-            this.panel1.Controls.Add(this.btnBackParent);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.txtBoxSearch);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 96);
-            this.panel1.TabIndex = 9;
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlHeader.Controls.Add(this.btnSpellCheck);
+            this.pnlHeader.Controls.Add(this.lblChapName);
+            this.pnlHeader.Controls.Add(this.lblBookName);
+            this.pnlHeader.Controls.Add(this.btnBackParent);
+            this.pnlHeader.Controls.Add(this.btnSearch);
+            this.pnlHeader.Controls.Add(this.txtBoxSearch);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(874, 96);
+            this.pnlHeader.TabIndex = 9;
+            // 
+            // btnSpellCheck
+            // 
+            this.btnSpellCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSpellCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpellCheck.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpellCheck.Location = new System.Drawing.Point(772, 29);
+            this.btnSpellCheck.Name = "btnSpellCheck";
+            this.btnSpellCheck.Size = new System.Drawing.Size(75, 27);
+            this.btnSpellCheck.TabIndex = 11;
+            this.btnSpellCheck.Text = "Kiểm tra";
+            this.btnSpellCheck.UseVisualStyleBackColor = true;
             // 
             // lblChapName
             // 
@@ -188,48 +208,114 @@
             this.btnBackParent.UseVisualStyleBackColor = true;
             this.btnBackParent.Click += new System.EventHandler(this.btnBackParent_Click);
             // 
-            // panel3
+            // pnlSidebar
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.listBoxChapter);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 96);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(223, 350);
-            this.panel3.TabIndex = 10;
+            this.pnlSidebar.BackColor = System.Drawing.Color.Black;
+            this.pnlSidebar.Controls.Add(this.pnlMenu);
+            this.pnlSidebar.Controls.Add(this.pnlSlide);
+            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 96);
+            this.pnlSidebar.Name = "pnlSidebar";
+            this.pnlSidebar.Size = new System.Drawing.Size(249, 350);
+            this.pnlSidebar.TabIndex = 10;
             // 
-            // listBoxChapter
+            // pnlMenu
             // 
-            this.listBoxChapter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.pnlMenu.Controls.Add(this.button1);
+            this.pnlMenu.Controls.Add(this.btnCheckError);
+            this.pnlMenu.Controls.Add(this.btnSearchResult);
+            this.pnlMenu.Controls.Add(this.btnSetting);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(42, 351);
+            this.pnlMenu.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::BookApp.Properties.Resources.Settings_32px;
+            this.button1.Location = new System.Drawing.Point(5, 250);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 32);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckError
+            // 
+            this.btnCheckError.FlatAppearance.BorderSize = 0;
+            this.btnCheckError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckError.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCheckError.Image = global::BookApp.Properties.Resources.Error_32px;
+            this.btnCheckError.Location = new System.Drawing.Point(5, 195);
+            this.btnCheckError.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCheckError.Name = "btnCheckError";
+            this.btnCheckError.Size = new System.Drawing.Size(32, 32);
+            this.btnCheckError.TabIndex = 0;
+            this.btnCheckError.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchResult
+            // 
+            this.btnSearchResult.FlatAppearance.BorderSize = 0;
+            this.btnSearchResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchResult.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSearchResult.Image = global::BookApp.Properties.Resources.Search_32px;
+            this.btnSearchResult.Location = new System.Drawing.Point(5, 153);
+            this.btnSearchResult.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearchResult.Name = "btnSearchResult";
+            this.btnSearchResult.Size = new System.Drawing.Size(32, 32);
+            this.btnSearchResult.TabIndex = 0;
+            this.btnSearchResult.UseVisualStyleBackColor = true;
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSetting.Image = global::BookApp.Properties.Resources.List_32px;
+            this.btnSetting.Location = new System.Drawing.Point(5, 111);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(32, 32);
+            this.btnSetting.TabIndex = 0;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnList_Click);
+            // 
+            // pnlSlide
+            // 
+            this.pnlSlide.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxChapter.BackColor = System.Drawing.Color.Black;
-            this.listBoxChapter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxChapter.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxChapter.ForeColor = System.Drawing.Color.White;
-            this.listBoxChapter.FormattingEnabled = true;
-            this.listBoxChapter.HorizontalExtent = 30;
-            this.listBoxChapter.HorizontalScrollbar = true;
-            this.listBoxChapter.ItemHeight = 20;
-            this.listBoxChapter.Location = new System.Drawing.Point(3, 6);
-            this.listBoxChapter.Name = "listBoxChapter";
-            this.listBoxChapter.Size = new System.Drawing.Size(217, 340);
-            this.listBoxChapter.TabIndex = 0;
-            this.listBoxChapter.Click += new System.EventHandler(this.listBoxChapter_Click);
-            this.listBoxChapter.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lst_DrawItem);
-            this.listBoxChapter.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lst_MeasureItem);
+            this.pnlSlide.BackColor = System.Drawing.Color.Black;
+            this.pnlSlide.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pnlSlide.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlSlide.ForeColor = System.Drawing.Color.White;
+            this.pnlSlide.FormattingEnabled = true;
+            this.pnlSlide.HorizontalExtent = 30;
+            this.pnlSlide.HorizontalScrollbar = true;
+            this.pnlSlide.ItemHeight = 20;
+            this.pnlSlide.Location = new System.Drawing.Point(44, 4);
+            this.pnlSlide.Name = "pnlSlide";
+            this.pnlSlide.Size = new System.Drawing.Size(202, 340);
+            this.pnlSlide.TabIndex = 0;
+            this.pnlSlide.Click += new System.EventHandler(this.listBoxChapter_Click);
+            this.pnlSlide.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lst_DrawItem);
+            this.pnlSlide.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lst_MeasureItem);
             // 
-            // panel4
+            // pnlContent
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel4.Controls.Add(this.rtContent);
-            this.panel4.Location = new System.Drawing.Point(229, 96);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(645, 350);
-            this.panel4.TabIndex = 11;
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlContent.Controls.Add(this.rtContent);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(249, 96);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(625, 350);
+            this.pnlContent.TabIndex = 11;
             // 
             // rtContent
             // 
@@ -243,21 +329,9 @@
             this.rtContent.Location = new System.Drawing.Point(3, 3);
             this.rtContent.Name = "rtContent";
             this.rtContent.ReadOnly = true;
-            this.rtContent.Size = new System.Drawing.Size(639, 341);
+            this.rtContent.Size = new System.Drawing.Size(619, 341);
             this.rtContent.TabIndex = 5;
             this.rtContent.Text = "";
-            // 
-            // btnSpellCheck
-            // 
-            this.btnSpellCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSpellCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSpellCheck.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpellCheck.Location = new System.Drawing.Point(772, 29);
-            this.btnSpellCheck.Name = "btnSpellCheck";
-            this.btnSpellCheck.Size = new System.Drawing.Size(75, 27);
-            this.btnSpellCheck.TabIndex = 11;
-            this.btnSpellCheck.Text = "Kiểm tra";
-            this.btnSpellCheck.UseVisualStyleBackColor = true;
             // 
             // Reader
             // 
@@ -265,9 +339,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(874, 500);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContent);
+            this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -278,10 +352,11 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Reader_FormClosed);
             this.Load += new System.EventHandler(this.showEntryContent);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -294,14 +369,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Button btnBackParent;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListBox listBoxChapter;
+        private System.Windows.Forms.Panel pnlSidebar;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.ListBox pnlSlide;
         private System.Windows.Forms.RichTextBox rtContent;
         private System.Windows.Forms.Label lblBookName;
         private System.Windows.Forms.Label lblChapName;
         private System.Windows.Forms.Button btnSpellCheck;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Button btnCheckError;
+        private System.Windows.Forms.Button btnSearchResult;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Button button1;
     }
 }

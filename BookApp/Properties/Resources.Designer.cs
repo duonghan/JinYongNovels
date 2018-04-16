@@ -243,6 +243,16 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Back_32px1 {
+            get {
+                object obj = ResourceManager.GetObject("Back_32px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Compress_32px {
             get {
                 object obj = ResourceManager.GetObject("Compress_32px", resourceCulture);
@@ -256,6 +266,16 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap Delete_32px {
             get {
                 object obj = ResourceManager.GetObject("Delete_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Error_32px {
+            get {
+                object obj = ResourceManager.GetObject("Error_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,6 +353,26 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Left {
+            get {
+                object obj = ResourceManager.GetObject("Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap List_32px {
+            get {
+                object obj = ResourceManager.GetObject("List_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Literature_32px {
             get {
                 object obj = ResourceManager.GetObject("Literature_32px", resourceCulture);
@@ -353,9 +393,39 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Next_Page {
+            get {
+                object obj = ResourceManager.GetObject("Next_Page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Notification_32px {
             get {
                 object obj = ResourceManager.GetObject("Notification_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Previous_Page {
+            get {
+                object obj = ResourceManager.GetObject("Previous_Page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Right {
+            get {
+                object obj = ResourceManager.GetObject("Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,6 +473,26 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sort_Left {
+            get {
+                object obj = ResourceManager.GetObject("Sort_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sort_Right {
+            get {
+                object obj = ResourceManager.GetObject("Sort_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap splash {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
@@ -436,6 +526,26 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap welcome_2 {
             get {
                 object obj = ResourceManager.GetObject("welcome_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zoom_In_32px {
+            get {
+                object obj = ResourceManager.GetObject("Zoom_In_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zoom_Out_32px {
+            get {
+                object obj = ResourceManager.GetObject("Zoom_Out_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

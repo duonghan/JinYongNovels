@@ -18,11 +18,14 @@ namespace BookApp
         private int bookid;
         public Form parentTag;
 
+        int pnlSideBarWidth;
+        bool isHided;
+
         public Reader()
         {
             InitializeComponent();
             showChapter(bookid);
-            listBoxChapter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            pnlSlide.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
         }
 
         public Reader(int ID)
@@ -31,7 +34,10 @@ namespace BookApp
             InitializeComponent();
             showChapter(bookid);
             showBookName(bookid);
-            listBoxChapter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            pnlSlide.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+
+            pnlSideBarWidth = pnlSidebar.Width;
+            isHided = false;
         }
 
         #region Method
@@ -39,13 +45,13 @@ namespace BookApp
         //Show chapter list in left hand
         private void showChapter(int bookID)
         {
-            listBoxChapter.Items.Clear();
+            pnlSlide.Items.Clear();
 
             List<Chapter> listChapter = ChapterDAO.Instance.loadChapterList(bookID);
 
             foreach (Chapter item in listChapter)
             {                
-                listBoxChapter.Items.Add(item.ID + ". " + item.Name);
+                pnlSlide.Items.Add(item.ID + ". " + item.Name);
                 comboBoxChapterList.Items.Add("Chương " + item.ID);
 
             }
@@ -68,7 +74,7 @@ namespace BookApp
             comboBoxChapterList.SelectedIndex = id;
             comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[id].ToString();
 
-            listBoxChapter.SelectedIndex = id;
+            pnlSlide.SelectedIndex = id;
         }
 
         private void showSearchResult()
@@ -82,13 +88,13 @@ namespace BookApp
         #region Event
         private void listBoxChapter_Click(object sender, EventArgs e)
         {
-            int id = this.listBoxChapter.SelectedIndex;
+            int id = this.pnlSlide.SelectedIndex;
             showContent(id);
         }
         
         private void btnBackParent_Click(object sender, EventArgs e)
         {
-            BookDAO.Instance.updateBookStatus(bookid, this.listBoxChapter.SelectedIndex);
+            BookDAO.Instance.updateBookStatus(bookid, this.pnlSlide.SelectedIndex);
 
             //BookList booklist = new BookList();
             //Home home = new Home();
@@ -148,12 +154,12 @@ namespace BookApp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            showContent(this.listBoxChapter.SelectedIndex + 1);
+            showContent(this.pnlSlide.SelectedIndex + 1);
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            showContent(this.listBoxChapter.SelectedIndex - 1);
+            showContent(this.pnlSlide.SelectedIndex - 1);
         }
 
         private void txtBoxSearch_KeyDown(object sender, KeyEventArgs e)
@@ -167,23 +173,40 @@ namespace BookApp
         //Word wrap listbox items if content string width is bigger than listbox width
         private void lst_MeasureItem(object sender, MeasureItemEventArgs e)
         {
-            e.ItemHeight = (int)e.Graphics.MeasureString(listBoxChapter.Items[e.Index].ToString(), listBoxChapter.Font, listBoxChapter.Width).Height;
+            e.ItemHeight = (int)e.Graphics.MeasureString(pnlSlide.Items[e.Index].ToString(), pnlSlide.Font, pnlSlide.Width).Height;
         }
 
         private void lst_DrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
             e.DrawFocusRectangle();
-            e.Graphics.DrawString(listBoxChapter.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+            e.Graphics.DrawString(pnlSlide.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
         }
 
         private void Reader_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BookDAO.Instance.updateBookStatus(bookid, this.listBoxChapter.SelectedIndex);
+            BookDAO.Instance.updateBookStatus(bookid, this.pnlSlide.SelectedIndex);
         }
+
 
         #endregion
 
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            if (isHided)
+            {
+                this.pnlSidebar.Width = pnlSideBarWidth;
 
+                isHided = false;
+                this.Refresh();
+            }
+            else
+            {
+                this.pnlSidebar.Width = pnlMenu.Width;
+
+                isHided = true;
+                this.Refresh();
+            }
+        }
     }
 }

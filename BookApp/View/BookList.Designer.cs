@@ -74,12 +74,14 @@
             this.txtBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSearch.ForeColor = System.Drawing.Color.White;
-            this.txtBoxSearch.Location = new System.Drawing.Point(91, 23);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(20);
+            this.txtBoxSearch.Location = new System.Drawing.Point(89, 20);
+            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(40);
+            this.txtBoxSearch.Multiline = true;
             this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Size = new System.Drawing.Size(655, 22);
+            this.txtBoxSearch.Size = new System.Drawing.Size(655, 31);
             this.txtBoxSearch.TabIndex = 5;
             this.txtBoxSearch.Text = "Tìm kiếm...";
+            this.txtBoxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // flpBook
             // 

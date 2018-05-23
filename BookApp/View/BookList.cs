@@ -58,7 +58,7 @@ namespace BookApp
         Panel addPanel(Book book)
         {
 
-            Image img = Image.FromFile(@"D:\Material\Code\CSharp\BookApp\BookApp\images\cover\" + book.ID + ".jpg");
+            Image img = Image.FromFile(@"..\..\Resources\images\cover\" + book.ID + ".jpg");
             Size size = new Size(BookDAO.BookWidth, BookDAO.BookHeight);
 
             // create the combined control

@@ -24,3 +24,4 @@ D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\BookApp.pdb
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Properties.Resources.resources
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.exe
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.pdb
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csprojResolveAssemblyReference.cache

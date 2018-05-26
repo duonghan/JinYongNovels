@@ -1,4 +1,4 @@
-# Phần mềm đọc truyện Kim Dung  
+﻿# Phần mềm đọc truyện Kim Dung  
 
 ## ***Bài tập lớn học phần "Lập trình .NET"***  
 ---
@@ -59,4 +59,4 @@ Ví dụ câu: "con mèo đi ra ngoài đường" thì người dùng tìm kiế
 2. [Đỗ Minh Quang](https://www.facebook.com/quang.do.963871)  
 3. [Tô Tiến Đạt](https://www.facebook.com/dat.tien.1656)  
 
-![Cover - JinYong](cover.jpg)  
+![Cover - JinYong](cover.png)  

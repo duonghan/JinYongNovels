@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -82,6 +82,7 @@
     <Compile Include="BUS\SearchHandler.cs" />
     <Compile Include="BUS\SpellCheck.cs" />
     <Compile Include="DTO\Chapter.cs" />
+    <Compile Include="DTO\Result.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,11 +138,23 @@
     <Compile Include="View\Reader.Designer.cs">
       <DependentUpon>Reader.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Video.Designer.cs">
+      <DependentUpon>Video.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Welcome.cs">
       <SubType>Form</SubType>
@@ -172,8 +185,14 @@
     <EmbeddedResource Include="View\Reader.resx">
       <DependentUpon>Reader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Video.resx">
+      <DependentUpon>Video.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
@@ -373,6 +392,90 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\icons8-color-wheel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\icons8-pause-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\icons8-play-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Color_wheel_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Pause_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Play_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Pause-button_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Play-button_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Decrese_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Increse_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Font-size_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Font-custom_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Music-next_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Music-player_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Music-previous_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Video-player_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

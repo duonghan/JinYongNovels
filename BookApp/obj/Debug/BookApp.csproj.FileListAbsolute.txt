@@ -25,3 +25,14 @@ D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.Properties.Resources.r
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.exe
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.pdb
 D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csprojResolveAssemblyReference.cache
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.View.Setting.resources
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\Interop.WMPLib.dll
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\AxInterop.WMPLib.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\Interop.WMPLib.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\AxInterop.WMPLib.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.csproj.ResolveComReference.cache
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\Interop.ShockwaveFlashObjects.dll
+D:\Material\Code\CSharp\BookApp\BookApp\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\Interop.ShockwaveFlashObjects.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+D:\Material\Code\CSharp\BookApp\BookApp\obj\Debug\BookApp.View.Video.resources

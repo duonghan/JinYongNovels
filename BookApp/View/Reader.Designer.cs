@@ -33,6 +33,17 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnForeColor = new System.Windows.Forms.Button();
+            this.btnBackColor = new System.Windows.Forms.Button();
+            this.btnDecreaseFSize = new System.Windows.Forms.Button();
+            this.btnFontCustom = new System.Windows.Forms.Button();
+            this.btnIncreaseFSize = new System.Windows.Forms.Button();
+            this.btnVideo = new System.Windows.Forms.Button();
+            this.btnPauseSound = new System.Windows.Forms.Button();
+            this.btnPlaySound = new System.Windows.Forms.Button();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -49,7 +60,12 @@
             this.pnlSlide = new System.Windows.Forms.ListBox();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.rtContent = new System.Windows.Forms.RichTextBox();
+            this.colorDialogSelector = new System.Windows.Forms.ColorDialog();
+            this.fontDialog = new System.Windows.Forms.FontDialog();
+            this.btnNextSound = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -61,7 +77,7 @@
             this.comboBoxChapterList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.comboBoxChapterList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChapterList.FormattingEnabled = true;
-            this.comboBoxChapterList.Location = new System.Drawing.Point(374, 23);
+            this.comboBoxChapterList.Location = new System.Drawing.Point(374, 22);
             this.comboBoxChapterList.Name = "comboBoxChapterList";
             this.comboBoxChapterList.Size = new System.Drawing.Size(112, 21);
             this.comboBoxChapterList.TabIndex = 0;
@@ -98,6 +114,18 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnForeColor);
+            this.panel2.Controls.Add(this.btnBackColor);
+            this.panel2.Controls.Add(this.btnDecreaseFSize);
+            this.panel2.Controls.Add(this.btnFontCustom);
+            this.panel2.Controls.Add(this.btnIncreaseFSize);
+            this.panel2.Controls.Add(this.btnVideo);
+            this.panel2.Controls.Add(this.btnNextSound);
+            this.panel2.Controls.Add(this.btnPauseSound);
+            this.panel2.Controls.Add(this.btnPlaySound);
             this.panel2.Controls.Add(this.btnPrev);
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.comboBoxChapterList);
@@ -106,6 +134,151 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(874, 54);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox2.Image = global::BookApp.Properties.Resources.Music_player_32px;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(562, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BookApp.Properties.Resources.Color_wheel_48px;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(129, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Image = global::BookApp.Properties.Resources.Color_wheel_48px;
+            this.label1.Location = new System.Drawing.Point(103, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 5;
+            // 
+            // btnForeColor
+            // 
+            this.btnForeColor.BackColor = System.Drawing.Color.White;
+            this.btnForeColor.FlatAppearance.BorderSize = 0;
+            this.btnForeColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForeColor.ForeColor = System.Drawing.Color.White;
+            this.btnForeColor.Location = new System.Drawing.Point(175, 13);
+            this.btnForeColor.Name = "btnForeColor";
+            this.btnForeColor.Size = new System.Drawing.Size(21, 21);
+            this.btnForeColor.TabIndex = 4;
+            this.btnForeColor.UseVisualStyleBackColor = false;
+            this.btnForeColor.Click += new System.EventHandler(this.btnForeColor_Click);
+            // 
+            // btnBackColor
+            // 
+            this.btnBackColor.BackColor = System.Drawing.Color.Black;
+            this.btnBackColor.FlatAppearance.BorderSize = 0;
+            this.btnBackColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackColor.ForeColor = System.Drawing.Color.White;
+            this.btnBackColor.Location = new System.Drawing.Point(188, 22);
+            this.btnBackColor.Name = "btnBackColor";
+            this.btnBackColor.Size = new System.Drawing.Size(21, 21);
+            this.btnBackColor.TabIndex = 4;
+            this.btnBackColor.UseVisualStyleBackColor = false;
+            this.btnBackColor.Click += new System.EventHandler(this.btnBackColor_Click);
+            // 
+            // btnDecreaseFSize
+            // 
+            this.btnDecreaseFSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDecreaseFSize.BackgroundImage = global::BookApp.Properties.Resources.Decrese_32px;
+            this.btnDecreaseFSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDecreaseFSize.FlatAppearance.BorderSize = 0;
+            this.btnDecreaseFSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecreaseFSize.Location = new System.Drawing.Point(823, 15);
+            this.btnDecreaseFSize.Name = "btnDecreaseFSize";
+            this.btnDecreaseFSize.Size = new System.Drawing.Size(24, 24);
+            this.btnDecreaseFSize.TabIndex = 2;
+            this.btnDecreaseFSize.UseVisualStyleBackColor = true;
+            this.btnDecreaseFSize.Click += new System.EventHandler(this.btnDecreaseFSize_Click);
+            // 
+            // btnFontCustom
+            // 
+            this.btnFontCustom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFontCustom.BackgroundImage = global::BookApp.Properties.Resources.Font_custom_32px;
+            this.btnFontCustom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFontCustom.FlatAppearance.BorderSize = 0;
+            this.btnFontCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFontCustom.Location = new System.Drawing.Point(763, 15);
+            this.btnFontCustom.Name = "btnFontCustom";
+            this.btnFontCustom.Size = new System.Drawing.Size(24, 24);
+            this.btnFontCustom.TabIndex = 2;
+            this.btnFontCustom.UseVisualStyleBackColor = true;
+            this.btnFontCustom.Click += new System.EventHandler(this.btnFontCustom_Click);
+            // 
+            // btnIncreaseFSize
+            // 
+            this.btnIncreaseFSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIncreaseFSize.BackgroundImage = global::BookApp.Properties.Resources.Increse_32px;
+            this.btnIncreaseFSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIncreaseFSize.FlatAppearance.BorderSize = 0;
+            this.btnIncreaseFSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncreaseFSize.Location = new System.Drawing.Point(793, 15);
+            this.btnIncreaseFSize.Name = "btnIncreaseFSize";
+            this.btnIncreaseFSize.Size = new System.Drawing.Size(24, 24);
+            this.btnIncreaseFSize.TabIndex = 2;
+            this.btnIncreaseFSize.UseVisualStyleBackColor = true;
+            this.btnIncreaseFSize.Click += new System.EventHandler(this.btnIncreaseFSize_Click);
+            // 
+            // btnVideo
+            // 
+            this.btnVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnVideo.BackgroundImage = global::BookApp.Properties.Resources.Video_player_32px;
+            this.btnVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVideo.FlatAppearance.BorderSize = 0;
+            this.btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVideo.Location = new System.Drawing.Point(688, 12);
+            this.btnVideo.Name = "btnVideo";
+            this.btnVideo.Size = new System.Drawing.Size(30, 30);
+            this.btnVideo.TabIndex = 2;
+            this.btnVideo.UseVisualStyleBackColor = true;
+            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
+            // 
+            // btnPauseSound
+            // 
+            this.btnPauseSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPauseSound.BackgroundImage = global::BookApp.Properties.Resources.Pause_button_32px;
+            this.btnPauseSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPauseSound.FlatAppearance.BorderSize = 0;
+            this.btnPauseSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPauseSound.Location = new System.Drawing.Point(628, 15);
+            this.btnPauseSound.Name = "btnPauseSound";
+            this.btnPauseSound.Size = new System.Drawing.Size(24, 24);
+            this.btnPauseSound.TabIndex = 2;
+            this.btnPauseSound.UseVisualStyleBackColor = true;
+            this.btnPauseSound.Click += new System.EventHandler(this.btnPauseSound_Click);
+            // 
+            // btnPlaySound
+            // 
+            this.btnPlaySound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPlaySound.BackgroundImage = global::BookApp.Properties.Resources.Play_button_32px;
+            this.btnPlaySound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlaySound.FlatAppearance.BorderSize = 0;
+            this.btnPlaySound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaySound.Location = new System.Drawing.Point(597, 15);
+            this.btnPlaySound.Name = "btnPlaySound";
+            this.btnPlaySound.Size = new System.Drawing.Size(24, 24);
+            this.btnPlaySound.TabIndex = 2;
+            this.btnPlaySound.UseVisualStyleBackColor = true;
+            this.btnPlaySound.Click += new System.EventHandler(this.btnPlaySound_Click);
             // 
             // txtBoxSearch
             // 
@@ -333,6 +506,20 @@
             this.rtContent.TabIndex = 5;
             this.rtContent.Text = "";
             // 
+            // btnNextSound
+            // 
+            this.btnNextSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnNextSound.BackgroundImage = global::BookApp.Properties.Resources.Music_next_32px;
+            this.btnNextSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNextSound.FlatAppearance.BorderSize = 0;
+            this.btnNextSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextSound.Location = new System.Drawing.Point(658, 15);
+            this.btnNextSound.Name = "btnNextSound";
+            this.btnNextSound.Size = new System.Drawing.Size(24, 24);
+            this.btnNextSound.TabIndex = 2;
+            this.btnNextSound.UseVisualStyleBackColor = true;
+            this.btnNextSound.Click += new System.EventHandler(this.btnNextSound_Click);
+            // 
             // Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +539,9 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Reader_FormClosed);
             this.Load += new System.EventHandler(this.showEntryContent);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlSidebar.ResumeLayout(false);
@@ -383,5 +573,19 @@
         private System.Windows.Forms.Button btnSearchResult;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPauseSound;
+        private System.Windows.Forms.Button btnPlaySound;
+        private System.Windows.Forms.Button btnForeColor;
+        private System.Windows.Forms.Button btnBackColor;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColorDialog colorDialogSelector;
+        private System.Windows.Forms.Button btnDecreaseFSize;
+        private System.Windows.Forms.Button btnIncreaseFSize;
+        private System.Windows.Forms.Button btnFontCustom;
+        private System.Windows.Forms.FontDialog fontDialog;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnVideo;
+        private System.Windows.Forms.Button btnNextSound;
     }
 }

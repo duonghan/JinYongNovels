@@ -243,9 +243,29 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Color_wheel_48px {
+            get {
+                object obj = ResourceManager.GetObject("Color_wheel_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Compress_32px {
             get {
                 object obj = ResourceManager.GetObject("Compress_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Decrese_32px {
+            get {
+                object obj = ResourceManager.GetObject("Decrese_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,6 +333,26 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Font_custom_32px {
+            get {
+                object obj = ResourceManager.GetObject("Font_custom_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Font_size_32px {
+            get {
+                object obj = ResourceManager.GetObject("Font_size_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GitHub_32px {
             get {
                 object obj = ResourceManager.GetObject("GitHub_32px", resourceCulture);
@@ -346,6 +386,16 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap Home_32px {
             get {
                 object obj = ResourceManager.GetObject("Home_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Increse_32px {
+            get {
+                object obj = ResourceManager.GetObject("Increse_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +443,36 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Music_next_32px {
+            get {
+                object obj = ResourceManager.GetObject("Music_next_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Music_player_32px {
+            get {
+                object obj = ResourceManager.GetObject("Music_player_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Music_previous_32px {
+            get {
+                object obj = ResourceManager.GetObject("Music_previous_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Next_Page {
             get {
                 object obj = ResourceManager.GetObject("Next_Page", resourceCulture);
@@ -406,6 +486,26 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap Notification_32px {
             get {
                 object obj = ResourceManager.GetObject("Notification_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pause_button_32px {
+            get {
+                object obj = ResourceManager.GetObject("Pause_button_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Play_button_32px {
+            get {
+                object obj = ResourceManager.GetObject("Play_button_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +606,16 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap Twitter_32px {
             get {
                 object obj = ResourceManager.GetObject("Twitter_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Video_player_32px {
+            get {
+                object obj = ResourceManager.GetObject("Video_player_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

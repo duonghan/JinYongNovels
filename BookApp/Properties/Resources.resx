@@ -265,4 +265,37 @@
   <data name="_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\cover\9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Color_wheel_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Color_wheel_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decrese_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Decrese_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Increse_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Increse_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pause_button_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Pause-button_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Play_button_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Play-button_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Font_size_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Font-size_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Font_custom_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Font-custom_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Music_next_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Music-next_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Music_player_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Music-player_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Music_previous_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Music-previous_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Video_player_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon\Video-player_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

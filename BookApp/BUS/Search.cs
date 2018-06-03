@@ -28,30 +28,43 @@ namespace BookApp.BUS
             }
         }
 
-        public void getResult(TextBox txtBoxSearch, RichTextBox rtContent)
+        //public void getResult(TextBox txtBoxSearch, RichTextBox rtContent)
+        //{
+        //    string[] words = txtBoxSearch.Text.Split();
+        //    int[] indexItems;
+
+        //    foreach (string word in words)
+        //    {
+        //        int startIndex = 0;
+        //        while (startIndex < rtContent.TextLength)
+        //        {
+        //            int wordStartIndex = rtContent.Find(word, startIndex, RichTextBoxFinds.MatchCase | RichTextBoxFinds.WholeWord);
+        //            if (wordStartIndex != -1)
+        //            {
+        //                rtContent.SelectionBackColor = Color.YellowGreen;
+
+        //                rtContent.Select(startIndex, word.Length);
+        //                rtContent.ScrollToCaret();
+
+        //            }
+        //            else
+        //                break;
+
+        //            startIndex += wordStartIndex + word.Length;
+        //        }
+        //    }
+        //}
+
+        public void getResult(TextBox txtBoxSearch, RichTextBox rtContent, int chapid)
         {
-            string[] words = txtBoxSearch.Text.Split();
-            int[] indexItems;
+            Result[] lsResult = SearchHandler.SearchText(rtContent.Text, txtBoxSearch.Text, chapid);
 
-            foreach (string word in words)
+            foreach(Result result in lsResult)
             {
-                int startIndex = 0;
-                while (startIndex < rtContent.TextLength)
-                {
-                    int wordStartIndex = rtContent.Find(word, startIndex, RichTextBoxFinds.MatchCase | RichTextBoxFinds.WholeWord);
-                    if (wordStartIndex != -1)
-                    {
-                        rtContent.SelectionBackColor = Color.YellowGreen;
-
-                        rtContent.Select(startIndex, word.Length);
-                        rtContent.ScrollToCaret();
-
-                    }
-                    else
-                        break;
-
-                    startIndex += wordStartIndex + word.Length;
-                }
+                rtContent.SelectionBackColor = Color.YellowGreen;
+                int length = result.getLastIndex() - result.getFirstIndex() + 1;
+                rtContent.Select(result.getFirstIndex(), length);
+                rtContent.ScrollToCaret();
             }
         }
 

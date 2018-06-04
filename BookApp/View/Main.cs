@@ -25,6 +25,10 @@ namespace BookApp
             viewSideBar(btnSideHome);
             changeStyle(btnSideHome);
             //loadBook();
+            // Load Home Screen
+            panelContent.Controls.Add(HomePage.Instance);
+            HomePage.Instance.Dock = DockStyle.Fill;
+            HomePage.Instance.BringToFront();
 
             //Destroy SplashScreen
             t.Abort();

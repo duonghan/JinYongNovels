@@ -180,7 +180,7 @@
             this.panelContent.AutoSize = true;
             this.panelContent.Location = new System.Drawing.Point(212, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(812, 512);
+            this.panelContent.Size = new System.Drawing.Size(852, 512);
             this.panelContent.TabIndex = 5;
             // 
             // Main
@@ -188,7 +188,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1024, 515);
+            this.ClientSize = new System.Drawing.Size(1064, 515);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.pnlSide);
             this.Controls.Add(this.pnlSidebar);

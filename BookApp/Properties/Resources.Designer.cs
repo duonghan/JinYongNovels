@@ -333,6 +333,16 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap First_page_32px {
+            get {
+                object obj = ResourceManager.GetObject("First_page_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Font_custom_32px {
             get {
                 object obj = ResourceManager.GetObject("Font_custom_32px", resourceCulture);
@@ -396,6 +406,16 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap Increse_32px {
             get {
                 object obj = ResourceManager.GetObject("Increse_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Last_page_32px {
+            get {
+                object obj = ResourceManager.GetObject("Last_page_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,6 +503,16 @@ namespace BookApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Next_page_32px {
+            get {
+                object obj = ResourceManager.GetObject("Next_page_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Notification_32px {
             get {
                 object obj = ResourceManager.GetObject("Notification_32px", resourceCulture);
@@ -516,6 +546,16 @@ namespace BookApp.Properties {
         internal static System.Drawing.Bitmap Previous_Page {
             get {
                 object obj = ResourceManager.GetObject("Previous_Page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Previous_page_32px {
+            get {
+                object obj = ResourceManager.GetObject("Previous_page_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

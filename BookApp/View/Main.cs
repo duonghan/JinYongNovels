@@ -26,7 +26,7 @@ namespace BookApp
             changeStyle(btnSideHome);
             //loadBook();
 
-            //Détroy SplashScreen
+            //Destroy SplashScreen
             t.Abort();
         }
 
@@ -85,7 +85,7 @@ namespace BookApp
             resetStyle(btnSideList);
             resetStyle(btnSideSearch);
 
-            if (!panelContent.Controls.Contains(BookList.Instance))
+            if (!panelContent.Controls.Contains(HomePage.Instance))
             {
                 panelContent.Controls.Add(HomePage.Instance);
                 HomePage.Instance.Dock = DockStyle.Fill;

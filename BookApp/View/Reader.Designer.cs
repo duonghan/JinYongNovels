@@ -42,11 +42,16 @@
             this.btnFontCustom = new System.Windows.Forms.Button();
             this.btnIncreaseFSize = new System.Windows.Forms.Button();
             this.btnVideo = new System.Windows.Forms.Button();
-            this.btnPauseSound = new System.Windows.Forms.Button();
-            this.btnPlaySound = new System.Windows.Forms.Button();
+            this.btnNextSound = new System.Windows.Forms.Button();
+            this.btnPlayToggle = new System.Windows.Forms.Button();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblPageStatus = new System.Windows.Forms.Label();
+            this.btnPageLast = new System.Windows.Forms.Button();
+            this.btnPageNext = new System.Windows.Forms.Button();
+            this.btnPagePrev = new System.Windows.Forms.Button();
+            this.btnPageFirst = new System.Windows.Forms.Button();
             this.btnSpellCheck = new System.Windows.Forms.Button();
             this.lblChapName = new System.Windows.Forms.Label();
             this.lblBookName = new System.Windows.Forms.Label();
@@ -62,7 +67,6 @@
             this.rtContent = new System.Windows.Forms.RichTextBox();
             this.colorDialogSelector = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.btnNextSound = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,8 +128,7 @@
             this.panel2.Controls.Add(this.btnIncreaseFSize);
             this.panel2.Controls.Add(this.btnVideo);
             this.panel2.Controls.Add(this.btnNextSound);
-            this.panel2.Controls.Add(this.btnPauseSound);
-            this.panel2.Controls.Add(this.btnPlaySound);
+            this.panel2.Controls.Add(this.btnPlayToggle);
             this.panel2.Controls.Add(this.btnPrev);
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.comboBoxChapterList);
@@ -252,33 +255,33 @@
             this.btnVideo.UseVisualStyleBackColor = true;
             this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
             // 
-            // btnPauseSound
+            // btnNextSound
             // 
-            this.btnPauseSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnPauseSound.BackgroundImage = global::BookApp.Properties.Resources.Pause_button_32px;
-            this.btnPauseSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPauseSound.FlatAppearance.BorderSize = 0;
-            this.btnPauseSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPauseSound.Location = new System.Drawing.Point(628, 15);
-            this.btnPauseSound.Name = "btnPauseSound";
-            this.btnPauseSound.Size = new System.Drawing.Size(24, 24);
-            this.btnPauseSound.TabIndex = 2;
-            this.btnPauseSound.UseVisualStyleBackColor = true;
-            this.btnPauseSound.Click += new System.EventHandler(this.btnPauseSound_Click);
+            this.btnNextSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnNextSound.BackgroundImage = global::BookApp.Properties.Resources.Music_next_32px;
+            this.btnNextSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNextSound.FlatAppearance.BorderSize = 0;
+            this.btnNextSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextSound.Location = new System.Drawing.Point(627, 16);
+            this.btnNextSound.Name = "btnNextSound";
+            this.btnNextSound.Size = new System.Drawing.Size(24, 24);
+            this.btnNextSound.TabIndex = 2;
+            this.btnNextSound.UseVisualStyleBackColor = true;
+            this.btnNextSound.Click += new System.EventHandler(this.btnNextSound_Click);
             // 
-            // btnPlaySound
+            // btnPlayToggle
             // 
-            this.btnPlaySound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnPlaySound.BackgroundImage = global::BookApp.Properties.Resources.Play_button_32px;
-            this.btnPlaySound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPlaySound.FlatAppearance.BorderSize = 0;
-            this.btnPlaySound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaySound.Location = new System.Drawing.Point(597, 15);
-            this.btnPlaySound.Name = "btnPlaySound";
-            this.btnPlaySound.Size = new System.Drawing.Size(24, 24);
-            this.btnPlaySound.TabIndex = 2;
-            this.btnPlaySound.UseVisualStyleBackColor = true;
-            this.btnPlaySound.Click += new System.EventHandler(this.btnPlaySound_Click);
+            this.btnPlayToggle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPlayToggle.BackgroundImage = global::BookApp.Properties.Resources.Pause_button_32px;
+            this.btnPlayToggle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlayToggle.FlatAppearance.BorderSize = 0;
+            this.btnPlayToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayToggle.Location = new System.Drawing.Point(597, 15);
+            this.btnPlayToggle.Name = "btnPlayToggle";
+            this.btnPlayToggle.Size = new System.Drawing.Size(24, 24);
+            this.btnPlayToggle.TabIndex = 2;
+            this.btnPlayToggle.UseVisualStyleBackColor = true;
+            this.btnPlayToggle.Click += new System.EventHandler(this.btnPlaySound_Click);
             // 
             // txtBoxSearch
             // 
@@ -323,6 +326,11 @@
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlHeader.Controls.Add(this.lblPageStatus);
+            this.pnlHeader.Controls.Add(this.btnPageLast);
+            this.pnlHeader.Controls.Add(this.btnPageNext);
+            this.pnlHeader.Controls.Add(this.btnPagePrev);
+            this.pnlHeader.Controls.Add(this.btnPageFirst);
             this.pnlHeader.Controls.Add(this.btnSpellCheck);
             this.pnlHeader.Controls.Add(this.lblChapName);
             this.pnlHeader.Controls.Add(this.lblBookName);
@@ -334,6 +342,78 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(874, 96);
             this.pnlHeader.TabIndex = 9;
+            // 
+            // lblPageStatus
+            // 
+            this.lblPageStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPageStatus.AutoSize = true;
+            this.lblPageStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageStatus.Location = new System.Drawing.Point(781, 66);
+            this.lblPageStatus.Name = "lblPageStatus";
+            this.lblPageStatus.Size = new System.Drawing.Size(28, 17);
+            this.lblPageStatus.TabIndex = 13;
+            this.lblPageStatus.Text = "1/5";
+            // 
+            // btnPageLast
+            // 
+            this.btnPageLast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPageLast.BackgroundImage = global::BookApp.Properties.Resources.Last_page_32px;
+            this.btnPageLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPageLast.FlatAppearance.BorderSize = 0;
+            this.btnPageLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageLast.Location = new System.Drawing.Point(839, 66);
+            this.btnPageLast.Name = "btnPageLast";
+            this.btnPageLast.Size = new System.Drawing.Size(16, 16);
+            this.btnPageLast.TabIndex = 12;
+            this.btnPageLast.UseVisualStyleBackColor = true;
+            this.btnPageLast.Click += new System.EventHandler(this.btnPageLast_Click);
+            // 
+            // btnPageNext
+            // 
+            this.btnPageNext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPageNext.BackgroundImage = global::BookApp.Properties.Resources.Next_page_32px;
+            this.btnPageNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPageNext.FlatAppearance.BorderSize = 0;
+            this.btnPageNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageNext.Location = new System.Drawing.Point(820, 67);
+            this.btnPageNext.Name = "btnPageNext";
+            this.btnPageNext.Size = new System.Drawing.Size(14, 14);
+            this.btnPageNext.TabIndex = 12;
+            this.btnPageNext.UseVisualStyleBackColor = true;
+            this.btnPageNext.Click += new System.EventHandler(this.btnPageNext_Click);
+            // 
+            // btnPagePrev
+            // 
+            this.btnPagePrev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPagePrev.BackgroundImage = global::BookApp.Properties.Resources.Previous_page_32px;
+            this.btnPagePrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPagePrev.FlatAppearance.BorderSize = 0;
+            this.btnPagePrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagePrev.Location = new System.Drawing.Point(758, 67);
+            this.btnPagePrev.Name = "btnPagePrev";
+            this.btnPagePrev.Size = new System.Drawing.Size(14, 14);
+            this.btnPagePrev.TabIndex = 12;
+            this.btnPagePrev.UseVisualStyleBackColor = true;
+            this.btnPagePrev.Click += new System.EventHandler(this.btnPagePrev_Click);
+            // 
+            // btnPageFirst
+            // 
+            this.btnPageFirst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPageFirst.BackgroundImage = global::BookApp.Properties.Resources.First_page_32px;
+            this.btnPageFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPageFirst.FlatAppearance.BorderSize = 0;
+            this.btnPageFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageFirst.Location = new System.Drawing.Point(740, 66);
+            this.btnPageFirst.Name = "btnPageFirst";
+            this.btnPageFirst.Size = new System.Drawing.Size(16, 16);
+            this.btnPageFirst.TabIndex = 12;
+            this.btnPageFirst.UseVisualStyleBackColor = true;
+            this.btnPageFirst.Click += new System.EventHandler(this.btnPageFirst_Click);
             // 
             // btnSpellCheck
             // 
@@ -506,20 +586,6 @@
             this.rtContent.TabIndex = 5;
             this.rtContent.Text = "";
             // 
-            // btnNextSound
-            // 
-            this.btnNextSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnNextSound.BackgroundImage = global::BookApp.Properties.Resources.Music_next_32px;
-            this.btnNextSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNextSound.FlatAppearance.BorderSize = 0;
-            this.btnNextSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextSound.Location = new System.Drawing.Point(658, 15);
-            this.btnNextSound.Name = "btnNextSound";
-            this.btnNextSound.Size = new System.Drawing.Size(24, 24);
-            this.btnNextSound.TabIndex = 2;
-            this.btnNextSound.UseVisualStyleBackColor = true;
-            this.btnNextSound.Click += new System.EventHandler(this.btnNextSound_Click);
-            // 
             // Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,8 +639,7 @@
         private System.Windows.Forms.Button btnSearchResult;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnPauseSound;
-        private System.Windows.Forms.Button btnPlaySound;
+        private System.Windows.Forms.Button btnPlayToggle;
         private System.Windows.Forms.Button btnForeColor;
         private System.Windows.Forms.Button btnBackColor;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -587,5 +652,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnVideo;
         private System.Windows.Forms.Button btnNextSound;
+        private System.Windows.Forms.Button btnPageFirst;
+        private System.Windows.Forms.Label lblPageStatus;
+        private System.Windows.Forms.Button btnPageLast;
+        private System.Windows.Forms.Button btnPageNext;
+        private System.Windows.Forms.Button btnPagePrev;
     }
 }

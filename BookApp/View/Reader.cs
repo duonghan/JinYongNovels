@@ -9,6 +9,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,7 @@ namespace BookApp
         bool isHided;
         Video video;
         String soundURL;
+        bool isPlay=true;
         String[] lstVideo = { "6VFq162EvWs&list=PLAlDQuz-HGasMPNQeUWiko7dEfr9dI4T3",
                               "6g5nXnTmwfs&list=PLNxirzjIPkMuK-DYAAVp7F9vOel08DKHJ",
                               "JTy4nan_2tI&list=PLj6a-CQbvJ80pwjqQ0QrSJM9JXYgZgon0",
@@ -43,6 +45,11 @@ namespace BookApp
                               "I5mVH4oLJ5A&t=1077s",
         };
 
+        private int CurrentPage = 0;
+        private int FirstPage = 0;
+        private int LastPage = 0;
+        List<string> Pages = new List<string>();
+
         public Reader()
         {
             InitializeComponent();
@@ -55,7 +62,7 @@ namespace BookApp
 
         public Reader(int ID)
         {
-            this.bookid = ID;
+            bookid = ID;
             InitializeComponent();
             showChapter(bookid);
             showBookName(bookid);
@@ -95,8 +102,49 @@ namespace BookApp
         {
             int chapID = id + 1;
             Chapter chapInfo = ChapterDAO.Instance.getChapterInfo(chapID, bookid);
-            lblChapName.Text = "Chương " + (chapID) + ". " + chapInfo.Name;           
-            rtContent.Text = chapInfo.ChapContent;
+            lblChapName.Text = "Chương " + (chapID) + ". " + chapInfo.Name;
+            //rtContent.Text = chapInfo.ChapContent;
+            string Document = chapInfo.ChapContent;
+            TextFormatFlags flags = TextFormatFlags.Top | TextFormatFlags.Left |
+                                    TextFormatFlags.WordBreak | TextFormatFlags.NoPadding |
+                                    TextFormatFlags.TextBoxControl;
+            Size textSize = TextRenderer.MeasureText(Document, rtContent.Font, rtContent.ClientSize, flags);
+            int NumberOfPages = textSize.Height / rtContent.ClientSize.Height;
+
+            if (textSize.Height > rtContent.Height)
+            {
+                rtContent.Text = Document;
+                rtContent.Update();
+
+                //Number of shown lines
+                int FirstCharOfLastShownLine = rtContent.GetCharIndexFromPosition(new Point(0, rtContent.ClientSize.Height));
+                int ShownLines = rtContent.GetLineFromCharIndex(FirstCharOfLastShownLine);
+                int TotalLines = rtContent.GetLineFromCharIndex(rtContent.Text.Length - 1);
+
+                for (int p = 0; p < NumberOfPages; p++)
+                {
+                    int FirstLineOfPage = (p * ShownLines);
+                    int FirstCharOfPage = rtContent.GetFirstCharIndexFromLine(FirstLineOfPage);
+
+                    int FirstLineOfNextPage = (p + 1) * ShownLines;
+                    FirstLineOfNextPage = (FirstLineOfNextPage > TotalLines) ? TotalLines : FirstLineOfNextPage;
+                    int LastCharOfPage = (FirstLineOfNextPage < TotalLines)
+                                       ? rtContent.GetFirstCharIndexFromLine(FirstLineOfNextPage) - 1
+                                       : rtContent.Text.Length;
+                    Pages.Add(rtContent.Text.Substring(FirstCharOfPage, LastCharOfPage - FirstCharOfPage));
+                }
+            }
+            else
+            {
+                Pages.Add(Document);
+            }
+            rtContent.Text = Pages.First();
+
+
+            this.lblPageStatus.Text = "1/" + Pages.Count.ToString();
+            LastPage = Pages.Count - 1;
+            btnPageNext.Enabled = true;
+            btnPageLast.Enabled = true;
 
             comboBoxChapterList.SelectedIndex = id;
             comboBoxChapterList.DisplayMember = comboBoxChapterList.Items[id].ToString();
@@ -115,18 +163,19 @@ namespace BookApp
         #region Event
         private void listBoxChapter_Click(object sender, EventArgs e)
         {
-            int id = this.pnlSlide.SelectedIndex;
+            int id = pnlSlide.SelectedIndex;
+            Pages.Clear();
             showContent(id);
         }
         
         private void btnBackParent_Click(object sender, EventArgs e)
         {
-            BookDAO.Instance.updateBookStatus(bookid, this.pnlSlide.SelectedIndex);
+            BookDAO.Instance.updateBookStatus(bookid, pnlSlide.SelectedIndex);
 
             //BookList booklist = new BookList();
             //Home home = new Home();
             parentTag.Show();
-            this.Close();
+            Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -164,8 +213,24 @@ namespace BookApp
         {
             try
             {
-                //Load first chapter in list
-                showContent(BookDAO.Instance.getBookStatus(bookid));
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "Bạn có muốn đọc từ vị trí lần cuối cùng không?";
+                string caption = "Đọc truyện";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //Load first chapter in list
+                    showContent(BookDAO.Instance.getBookStatus(bookid));
+                }else
+                {
+                    showContent(0);
+                }
+                
             }
             catch(NullReferenceException ex)
             {
@@ -181,12 +246,12 @@ namespace BookApp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            showContent(this.pnlSlide.SelectedIndex + 1);
+            showContent(pnlSlide.SelectedIndex + 1);
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            showContent(this.pnlSlide.SelectedIndex - 1);
+            showContent(pnlSlide.SelectedIndex - 1);
         }
 
         private void txtBoxSearch_KeyDown(object sender, KeyEventArgs e)
@@ -194,6 +259,15 @@ namespace BookApp
             if (e.KeyCode == Keys.Enter)
             {
                 showSearchResult();
+            }
+
+            if(e.KeyCode == Keys.Right)
+            {
+                btnPageNext_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                btnPagePrev_Click(sender, e);
             }
         }
 
@@ -212,35 +286,32 @@ namespace BookApp
 
         private void Reader_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BookDAO.Instance.updateBookStatus(bookid, this.pnlSlide.SelectedIndex);
+            BookDAO.Instance.updateBookStatus(bookid, pnlSlide.SelectedIndex);
             if(video != null) video.Close();
             player.close();
         }
-
-
-        #endregion
 
         private void btnList_Click(object sender, EventArgs e)
         {
             if (isHided)
             {
-                this.pnlSidebar.Width = pnlSideBarWidth;
+                pnlSidebar.Width = pnlSideBarWidth;
 
                 isHided = false;
-                this.Refresh();
+                Refresh();
             }
             else
             {
-                this.pnlSidebar.Width = pnlMenu.Width;
+                pnlSidebar.Width = pnlMenu.Width;
 
                 isHided = true;
-                this.Refresh();
+                Refresh();
             }
         }
 
         private void btnBackColor_Click(object sender, EventArgs e)
         {
-            if(colorDialogSelector.ShowDialog() == DialogResult.OK)
+            if (colorDialogSelector.ShowDialog() == DialogResult.OK)
             {
                 //displayColorSelector(colorDialogSelector.Color.Name);
                 btnBackColor.BackColor = rtContent.BackColor = colorDialogSelector.Color;
@@ -272,29 +343,33 @@ namespace BookApp
 
         private void btnFontCustom_Click(object sender, EventArgs e)
         {
-            if(fontDialog.ShowDialog() == DialogResult.OK & !String.IsNullOrEmpty(rtContent.Text))
+            if (fontDialog.ShowDialog() == DialogResult.OK & !String.IsNullOrEmpty(rtContent.Text))
             {
-                rtContent.Font = fontDialog.Font; 
+                rtContent.Font = fontDialog.Font;
             }
         }
 
         private void btnPlaySound_Click(object sender, EventArgs e)
         {
-            //player.Play();
-            player.controls.play();
-        }
-
-        private void btnPauseSound_Click(object sender, EventArgs e)
-        {
-            //player.Stop();
-            player.controls.pause();
+            if (isPlay)
+            {
+                isPlay = false;
+                btnPlayToggle.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Pause_button_32px));
+                player.controls.pause();
+            }
+            else
+            {
+                isPlay = true;
+                btnPlayToggle.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Play_button_32px));
+                player.controls.play();
+            }
         }
 
         private void btnNextSound_Click(object sender, EventArgs e)
         {
             player.controls.stop();
             if (soundURL.Contains("OP"))
-            {      
+            {
                 player.URL = soundURL = soundURL.Replace("OP", "ED");
             }
             else
@@ -306,10 +381,70 @@ namespace BookApp
 
         private void btnVideo_Click(object sender, EventArgs e)
         {
-            //player.URL = @"https://www.youtube.com/watch?v=Z7dXHZ77bAc";
-            System.Diagnostics.Process.Start(@"https://www.youtube.com/watch?v=Z7dXHZ77bAc");
-            //video = new Video("Z7dXHZ77bAc");
-            //video.Show();
+            System.Diagnostics.Process.Start(@"https://www.youtube.com/watch?v=" + lstVideo[bookid - 1]);
         }
-    }
+
+        private void btnPageNext_Click(object sender, EventArgs e)
+        {
+            if (CurrentPage < LastPage)
+            {
+                btnPageFirst.Enabled = true;
+                btnPagePrev.Enabled = true;
+
+                CurrentPage += 1;
+                rtContent.Text = Pages[CurrentPage];
+                this.lblPageStatus.Text = (CurrentPage + 1).ToString() + "/" + Pages.Count.ToString();
+
+                if (CurrentPage == LastPage)
+                {
+                    btnPageNext.Enabled = false;
+                    btnPageLast.Enabled = false;
+                }
+            }
+        }
+
+        private void btnPagePrev_Click(object sender, EventArgs e)
+        {
+            if (CurrentPage > FirstPage)
+            {
+                btnPageLast.Enabled = true;
+                btnPageNext.Enabled = true;
+
+                CurrentPage -= 1;
+                rtContent.Text = Pages[CurrentPage];
+                this.lblPageStatus.Text = (CurrentPage + 1).ToString() + "/" + Pages.Count.ToString();
+                if (CurrentPage == 0)
+                {
+                    btnPagePrev.Enabled = false;
+                    btnPageFirst.Enabled = false;
+                }
+            }
+        }
+
+        private void btnPageFirst_Click(object sender, EventArgs e)
+        {
+            btnPagePrev.Enabled = false;
+            btnPageFirst.Enabled = false;
+            btnPageNext.Enabled = true;
+            btnPageLast.Enabled = true;
+            CurrentPage = FirstPage;
+            rtContent.Text = Pages[CurrentPage];
+            this.lblPageStatus.Text = (CurrentPage + 1).ToString() + "/" + Pages.Count.ToString();
+        }
+
+        private void btnPageLast_Click(object sender, EventArgs e)
+        {
+            btnPageNext.Enabled = false;
+            btnPageLast.Enabled = false;
+            btnPagePrev.Enabled = true;
+            btnPageFirst.Enabled = true;
+            CurrentPage = LastPage;
+            rtContent.Text = Pages[CurrentPage];
+            this.lblPageStatus.Text = (CurrentPage + 1).ToString() + "/" + Pages.Count.ToString();
+        }
+
+
+        #endregion
+
+    } 
 }

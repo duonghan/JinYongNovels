@@ -477,6 +477,18 @@
   <ItemGroup>
     <None Include="Resources\icon\Video-player_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\First-page_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Last-page_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Next-page_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon\Previous-page_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
